@@ -5,12 +5,143 @@
     <link>http://lucas-wye.github.io/</link>
       <atom:link href="http://lucas-wye.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>ZW YE</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 06 May 2020 12:15:17 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 30 May 2020 10:50:03 +0800</lastBuildDate>
     <image>
       <url>http://lucas-wye.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>ZW YE</title>
       <link>http://lucas-wye.github.io/</link>
     </image>
+    
+    <item>
+      <title>Network</title>
+      <link>http://lucas-wye.github.io/post/cli_net_work/</link>
+      <pubDate>Sat, 30 May 2020 10:50:03 +0800</pubDate>
+      <guid>http://lucas-wye.github.io/post/cli_net_work/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;A computer network is a digital telecommunications network which allows nodes to share resources. In computer
+networks, computing devices exchange data with each other using connections (data links) between nodes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;commands&#34;&gt;Commands&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;ping 
+domainname
+hostname
+
+cat /etc/hosts # ip address
+sudo systemctl restart NetworkManager # hosts生效
+
+cat /etc/resolv.conf # dns server
+ip # TCP/IP interface configuration and routing utility
+ifconfig # configure a network interface
+route # show / manipulate the IP routing table
+netstat # show network status (network connections, routing tables, interface statistics, masquerade connections, and multicast memberships)
+
+sudo ping ip地址 -i 0.01 -s 65500 # 每0.01秒给ip地址对应的机器发送65500字节的数据包
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;useful-remote-connection-utilities&#34;&gt;Useful Remote Connection Utilities&lt;/h2&gt;
+&lt;p&gt;• &lt;strong&gt;ftp&lt;/strong&gt; [options] host, transfer file(s) using file transfer protocol&lt;br&gt;
+• &lt;strong&gt;telnet&lt;/strong&gt; [host [port]], communicate with host using telnet protocol&lt;br&gt;
+• &lt;strong&gt;ssh&lt;/strong&gt;, remote login or remote execution using secure shell&lt;br&gt;
+• &lt;strong&gt;rcp/scp&lt;/strong&gt;, remotely copy files from this machine to another machine&lt;br&gt;
+• &lt;strong&gt;rsync&lt;/strong&gt;, smartly copy files over network after checking contents&lt;br&gt;
+• &lt;strong&gt;curl&lt;/strong&gt;, transfer a URL via HTTP, FTP, IMAP, etc&lt;br&gt;
+• &lt;strong&gt;wget&lt;/strong&gt;, download files over the Internet via HTTP or FTP&lt;br&gt;
+• &lt;strong&gt;lynx/links&lt;/strong&gt;, text-mode (mini) web browser&lt;/p&gt;
+&lt;h3 id=&#34;aria2&#34;&gt;aria2&lt;/h3&gt;
+&lt;p&gt;(1)Install&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;# Ubuntu
+sudo apt-get install aria2
+# CentOS
+yum install aria2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(2)Usage&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;# 在命令后附加地址即可
+aria2c &amp;quot;url&amp;quot;
+# 分段下载，利用 aria2 的分段下载功能可以加快文件的下载速度
+# 使用 2 个连接来下载该文件，s的参数值介于 1~5 之间
+aria2c -s 2 &amp;quot;url&amp;quot;  
+
+# 断点续传，在命令中使用 c 选项可以断点续传文件
+aria2c -c &amp;quot;url&amp;quot; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;ssh&#34;&gt;ssh&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;# 安装 SSH(Secure Shell) 服务以提供远程管理服务
+sudo apt install openssh-server
+
+# 启动ssh服务
+/etc/init.d/ssh start
+sudo service ssh start
+
+# 检测是否已启动
+ps -e | grep ssh
+
+## SSH远程登录
+ssh username@192.168.0.1
+
+# 将文件/文件夹从远程机下载到本地(scp) 
+scp -r username@192.168.0.1:/home/username/remotefile.txt .
+
+# 设置公钥登录
+# (1)复制本地的公钥
+cat ~/.ssh/id_rsa.pub
+# (2)在远程机器上写入复制的公钥
+vim ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+# (3)远程机器授权公钥登录
+sudo echo &amp;quot;PubkeyAuthentication yes&amp;quot; &amp;gt;&amp;gt; /etc/ssh/sshd_config
+# (4)重启ssh服务
+sudo systemctl restart sshd.service
+
+# .ssh/config example
+Host {HOSTNAME}
+  HostName {IP}
+  User {Username}
+
+ssh HOSTNAME
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;curl&#34;&gt;curl&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;client URL tool&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;(1)不带有任何参数时，发出 GET 请求&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;curl https://www.example.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(2)&lt;code&gt;-A&lt;/code&gt;指定User-Agent，默认用户代理字符串是curl/[version]&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;curl -A &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36&#39; https://google.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(3)&lt;code&gt;-b&lt;/code&gt; 参数用来向服务器发送 Cookie&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;# 生成一个标头Cookie: foo=bar，向服务器发送一个名为foo、值为bar的 Cookie
+curl -b &#39;foo=bar&#39; https://google.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(4)&lt;code&gt;-d&lt;/code&gt; 参数用于发送 POST 请求的数据体&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;curl -d&#39;login=emma＆password=123&#39;-X POST https://google.com/login
+# `--data-urlencode` 等同于 `-d` 
+# 发送 POST 请求的数据体，区别在于会自动将发送的数据进行 URL 编码
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(5)&lt;code&gt;-G&lt;/code&gt; 参数用来构造 URL 的查询字符串&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;# 实际请求的 URL 为https://google.com/search?q=kitties&amp;amp;count=20
+curl -G -d &#39;q=kitties&#39; -d &#39;count=20&#39; https://google.com/search
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(6)&lt;code&gt;-H&lt;/code&gt; 参数添加 HTTP 请求的标头&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;curl -H &#39;Accept-Language: en-US&#39; https://google.com
+curl -d &#39;{&amp;quot;login&amp;quot;: &amp;quot;emma&amp;quot;, &amp;quot;pass&amp;quot;: &amp;quot;123&amp;quot;}&#39; -H &#39;Content-Type: application/json&#39; https://google.com/login
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(7) &lt;code&gt;-i&lt;/code&gt; 参数打印出服务器回应的 HTTP 标头&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;# 先输出服务器回应的标头，然后空一行，再输出网页的源码
+curl -i https://www.example.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(8)&lt;code&gt;-o&lt;/code&gt; 参数将服务器的回应保存成文件，等同于wget命令&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;curl -o example.html https://www.example.com
+# `-O` 参数将服务器回应保存成文件，并将 URL 的最后部分当作文件名。
+curl -O https://www.example.com/foo/bar.html
+# 通过添加 `-C` 继续对该文件进行下载，已经下载过的文件不会被重新下载
+curl -C -O http://www.gnu.org/software/gettext/manual/gettext.html
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;more&#34;&gt;More&lt;/h2&gt;
+&lt;p&gt;See detail in these websites.&lt;br&gt;
+
+&lt;a href=&#34;https://www.qingtingip.com/h_189554.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;nmcli用法&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>How to use search engine</title>
@@ -298,6 +429,9 @@ conda remove --name your_env_name package_name
 conda install tensorflow
 # pytorch(CPU)
 conda install pytorch torchvision cpuonly -c pytorch
+## 查看版本
+import torch
+print(torch.__version__)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;conda导出环境依赖&#34;&gt;conda导出环境依赖&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;conda list -e &amp;gt; requirements.txt
@@ -433,9 +567,9 @@ pm uninstall -k --user 0 package_name
       <pubDate>Mon, 27 Apr 2020 15:36:39 +0800</pubDate>
       <guid>http://lucas-wye.github.io/post/vi_vim/</guid>
       <description>&lt;ul&gt;
-&lt;li&gt;所有的 Unix Like 系统都会内建 vi 文书编辑器，其他的文书编辑器则不一定会存在。但是目前我们使用比较多的是 vim 编辑器。&lt;/li&gt;
-&lt;li&gt;vim 具有程序编辑的能力，可以主动的以字体颜色辨别语法的正确性，方便程序设计。&lt;/li&gt;
-&lt;li&gt;Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。简单的来说， vi 是老式的字处理器，不过功能已经很齐全了，但是还是有可以进步的地方。&lt;/li&gt;
+&lt;li&gt;所有的 Unix Like 系统都会内建 Vi 文书编辑器，其他的文书编辑器则不一定会存在。但是目前我们使用比较多的是 Vim 编辑器。&lt;/li&gt;
+&lt;li&gt;Vim 具有程序编辑的能力，可以主动的以字体颜色辨别语法的正确性，方便程序设计。&lt;/li&gt;
+&lt;li&gt;Vim是从 Vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。简单的来说， Vi 是老式的字处理器，不过功能已经很齐全了，但是还是有可以进步的地方。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;file-operation&#34;&gt;File Operation&lt;/h2&gt;
 &lt;table&gt;
@@ -455,8 +589,8 @@ pm uninstall -k --user 0 package_name
 &lt;td&gt;退出不保存&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;:saveas &amp;lt;path/to/file&amp;gt;&lt;/td&gt;
-&lt;td&gt;另存为 &amp;lt;path/to/file&amp;gt;&lt;/td&gt;
+&lt;td&gt;:saveas [path/to/file]&lt;/td&gt;
+&lt;td&gt;另存为 [path/to/file]&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;:qa!&lt;/td&gt;
@@ -468,7 +602,7 @@ pm uninstall -k --user 0 package_name
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;:w !sudo tee %&lt;/td&gt;
-&lt;td&gt;保存正在编辑的文件&lt;/td&gt;
+&lt;td&gt;以sudo保存正在编辑的文件&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;:n&lt;/td&gt;
@@ -479,7 +613,7 @@ pm uninstall -k --user 0 package_name
 &lt;td&gt;回到第一个文件&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;:edit &lt;Filename&gt;&lt;/td&gt;
+&lt;td&gt;:edit [Filename]&lt;/td&gt;
 &lt;td&gt;打开新文件&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -498,11 +632,11 @@ pm uninstall -k --user 0 package_name
 &lt;td&gt;move&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;/&lt;pattern&gt;&lt;/td&gt;
+&lt;td&gt;/[PATTERN]&lt;/td&gt;
 &lt;td&gt;搜索&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;?&lt;pattern&gt;&lt;/td&gt;
+&lt;td&gt;?[PATTERN]&lt;/td&gt;
 &lt;td&gt;搜索&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -558,11 +692,11 @@ pm uninstall -k --user 0 package_name
 &lt;td&gt;beginning of text on current line&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;CR&gt; F/B&lt;/td&gt;
+&lt;td&gt;[CTRL] F/B&lt;/td&gt;
 &lt;td&gt;move screen&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;CR&gt; D/U&lt;/td&gt;
+&lt;td&gt;[CTRL] D/U&lt;/td&gt;
 &lt;td&gt;move half screen&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -643,7 +777,7 @@ pm uninstall -k --user 0 package_name
 &lt;td&gt;undo&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;CR&gt; r&lt;/td&gt;
+&lt;td&gt;[CTRL] r&lt;/td&gt;
 &lt;td&gt;redo&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -690,7 +824,7 @@ pm uninstall -k --user 0 package_name
 &lt;td&gt;创建分屏&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;CR&gt; w + 方向&lt;/td&gt;
+&lt;td&gt;[CTRL] w + 方向&lt;/td&gt;
 &lt;td&gt;切换分屏&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -713,15 +847,15 @@ pm uninstall -k --user 0 package_name
 &lt;td&gt;display all option settings&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;:[Addr]s/old expr/new string/[g]&lt;/td&gt;
-&lt;td&gt;替换当前行/Addr的old expr为new string,[g]全局替换，否则只替换第一个 ｜&lt;/td&gt;
+&lt;td&gt;:[Addr/%]s/old expr/new string/[g]&lt;/td&gt;
+&lt;td&gt;替换当前行/Addr/%(文件内所有)的old expr为new string,[g]全局替换，否则只替换第一个 ｜&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;CR&gt; p/n&lt;/td&gt;
+&lt;td&gt;[CTRL] p/n&lt;/td&gt;
 &lt;td&gt;自动补齐&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;CR&gt; +/-&lt;/td&gt;
+&lt;td&gt;[CTRL] +/-&lt;/td&gt;
 &lt;td&gt;改变尺寸&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -733,11 +867,11 @@ pm uninstall -k --user 0 package_name
 &lt;td&gt;v-line模式&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;CR&gt; v&lt;/td&gt;
+&lt;td&gt;[CTRL] v&lt;/td&gt;
 &lt;td&gt;v-block模式&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;:normal &lt;Command&gt;&lt;/td&gt;
+&lt;td&gt;:normal [Command]&lt;/td&gt;
 &lt;td&gt;可视化模式下执行命令&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -832,16 +966,16 @@ pm uninstall -k --user 0 package_name
 &lt;a href=&#34;https://github.com/Lucas-Wye/academic-kickstart/blob/master/learning/.vimrc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;.vimrc&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;neovimhttpsneovimio&#34;&gt;
 &lt;a href=&#34;https://neovim.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;NeoVim&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;使用vim配置文件&lt;/p&gt;
+&lt;p&gt;使用Vim配置文件&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;ln -s ~/.vim ~/.config/nvim
 ln -s ~/.vimrc ~/.config/nvim/init.vim
-
-
-## More
-See detail in these websites.  
-[Vi/Vim教程](https://www.runoob.com/linux/linux-vim.html)  
-[简明 VIM 练级攻略](https://coolshell.cn/articles/5426.html)
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;more&#34;&gt;More&lt;/h2&gt;
+&lt;p&gt;See detail in these websites.&lt;br&gt;
+
+&lt;a href=&#34;https://www.runoob.com/linux/linux-vim.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Vi/Vim教程&lt;/a&gt;&lt;br&gt;
+
+&lt;a href=&#34;https://coolshell.cn/articles/5426.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;简明 VIM 练级攻略&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -1193,29 +1327,32 @@ git clone &amp;lt;仓库地址&amp;gt; --recursive
 &lt;li&gt;Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和Unix的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的Unix工具软件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;control-key&#34;&gt;Control Key&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;^U           cancel line
-^C           cancel operation
-^S           pause display
-^Q           restart display
-^A           光标移到行首
-^E           光标移到行末
-^K           清除至当前行尾
-^V           treat following control character as normal character
-option+方向键 以单词为单位移动
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;[CTRL]U           cancel line
+[CTRL]C           cancel operation
+[CTRL]S           pause display
+[CTRL]Q           restart display
+[CTRL]A           光标移到行首
+[CTRL]E           光标移到行末
+[CTRL]K           清除至当前行尾
+[CTRL]V           treat following control character as normal character
+[Option]方向键     以单词为单位移动
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;add-user-and-change-password&#34;&gt;Add user and Change password&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;adduser UserName
+&lt;h2 id=&#34;user&#34;&gt;User&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;sudo adduser USERNAME 
 # 添加root权限
-usermod -g sudo UserName
+sudo usermod -g sudo USERNAME 
+# change password
 passwd
+# delete user
+sudo userdel -r USERNAME
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;infomation&#34;&gt;Infomation&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;who
 who am i
 whoami
-env # show environment variables
-alias # rename commane ( alias l=&#39;ls -CF&#39;)
-man # manual sections
+env
+alias
+man
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;file-maintenance&#34;&gt;File Maintenance&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;# r = 4, w = 2, x = 1
@@ -1225,11 +1362,11 @@ chgrp # change the group of the file
 chown # change the owner of a file 
 
 # 查看当前目录文件大小
-# 方法一：列出当前目录下每个文件的大小，同时也会给出当前目录下所有文件大小总和
+# (1)列出当前目录下每个文件的大小，同时也会给出当前目录下所有文件大小总和
 ls -lht
 
-# 方法二：列出当前文件夹下所有文件对应的大小，把*替换为具体的文件名，会给出具体文件的大小
-du -sh *
+# (2)列出当前文件夹下所有文件对应的大小
+du -sh PATH
 
 # 删除文件中的空行
 cat YOUR_FILE | sed -e &#39;/^$/d&#39;
@@ -1265,7 +1402,10 @@ tar -jxvf YOUR_FILE.tar.bz2
 &lt;h2 id=&#34;find-and-search&#34;&gt;find and search&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;# 查找24小时内修改过的文件
 find ./ -mtime 0 
-grep -nHR &amp;quot;search string&amp;quot;
+# 查找当前目录及子目录中的.c文件
+find . -name &amp;quot;*.c&amp;quot;
+# 查找当前目录符合条件的文件内容
+grep -nHR &amp;quot;STRING&amp;quot; .
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;process&#34;&gt;process&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;ps
@@ -1274,13 +1414,13 @@ kill -9 PID
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;bash-executes-order&#34;&gt;Bash executes order&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;# login shell executes order:  
-/etc/profile -&amp;gt; 
-~/.bash/_profile -&amp;gt;  
-~/.bash_login -&amp;gt; 
+/etc/profile
+~/.bash/_profile
+~/.bash_login
 ~/.profile
 
 # non-login shell executes:  
-/etc/bashrc -&amp;gt; 
+/etc/bashrc
 ~/.bashrc
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;history&#34;&gt;History&lt;/h2&gt;
@@ -1318,11 +1458,11 @@ fdisk -l
 # 查看磁盘IO的性能
 iostat -x 10
 # 挂载硬盘到某个文件夹
-sudo mount /dev/sda /your/path
+sudo mount /dev/sda YOUR_PATH 
 # 查看硬盘挂载信息
 df -h
 # 取消挂载
-sudo umount /your/path
+sudo umount YOUR_PATH 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;删除ppa源&#34;&gt;删除ppa源&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;cd /etc/apt/sources.list.d/ # 找到关于源的文件,删除即可
@@ -1338,8 +1478,8 @@ sudo umount /your/path
 &amp;lt;                      stdin从file重定向
 tee                    复制stdout
 &amp;gt;/dev/null             直接扔掉stdout
-1&amp;gt;file1 2&amp;gt;file2        stdout to file1, stderr to file2
-&amp;gt;file 2&amp;gt;&amp;amp;1             redirect stdout and stderr to file
+1&amp;gt;FILE_1 2&amp;gt;FILE_2        stdout to FILE_1, stderr to FILE_2
+&amp;gt;FILE 2&amp;gt;&amp;amp;1             redirect stdout and stderr to FILE 
 2&amp;gt;&amp;amp;1 | tee             将stderr和stdout输出到文件的同时在屏幕上输出
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;开机进入命令行&#34;&gt;开机进入命令行&lt;/h2&gt;
@@ -1354,11 +1494,20 @@ export https_proxy=http://127.0.0.1:1087
 &lt;h2 id=&#34;ubuntu设置窗口键在左侧&#34;&gt;Ubuntu设置窗口键在左侧&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;gsettings set org.gnome.desktop.wm.preferences button-layout &#39;close,minimize,maximize:&#39;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;生成强密码&#34;&gt;生成强密码&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;openssl rand -base64 NUMBER
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;terminal-output-to-clip&#34;&gt;terminal output to clip&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows: &lt;code&gt;clip&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;MacOS: &lt;code&gt;pbcopy&lt;/code&gt;, &lt;code&gt;pbpaste&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Linux: &lt;code&gt;xsel&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
     <item>
-      <title>OpenMP使用方法</title>
+      <title>OpenMP</title>
       <link>http://lucas-wye.github.io/post/openmp/</link>
       <pubDate>Fri, 04 Oct 2019 15:03:25 +0800</pubDate>
       <guid>http://lucas-wye.github.io/post/openmp/</guid>

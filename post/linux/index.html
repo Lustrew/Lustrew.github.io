@@ -489,35 +489,6 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#projects"><span>Projects</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
-        <li class="nav-item">
           <a class="nav-link " href="/#contact"><span>Contact</span></a>
         </li>
 
@@ -655,29 +626,32 @@
 <li>Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和Unix的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的Unix工具软件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。</li>
 </ul>
 <h2 id="control-key">Control Key</h2>
-<pre><code class="language-text">^U           cancel line
-^C           cancel operation
-^S           pause display
-^Q           restart display
-^A           光标移到行首
-^E           光标移到行末
-^K           清除至当前行尾
-^V           treat following control character as normal character
-option+方向键 以单词为单位移动
+<pre><code class="language-text">[CTRL]U           cancel line
+[CTRL]C           cancel operation
+[CTRL]S           pause display
+[CTRL]Q           restart display
+[CTRL]A           光标移到行首
+[CTRL]E           光标移到行末
+[CTRL]K           清除至当前行尾
+[CTRL]V           treat following control character as normal character
+[Option]方向键     以单词为单位移动
 </code></pre>
-<h2 id="add-user-and-change-password">Add user and Change password</h2>
-<pre><code>adduser UserName
+<h2 id="user">User</h2>
+<pre><code>sudo adduser USERNAME 
 # 添加root权限
-usermod -g sudo UserName
+sudo usermod -g sudo USERNAME 
+# change password
 passwd
+# delete user
+sudo userdel -r USERNAME
 </code></pre>
 <h2 id="infomation">Infomation</h2>
 <pre><code>who
 who am i
 whoami
-env # show environment variables
-alias # rename commane ( alias l='ls -CF')
-man # manual sections
+env
+alias
+man
 </code></pre>
 <h2 id="file-maintenance">File Maintenance</h2>
 <pre><code># r = 4, w = 2, x = 1
@@ -687,11 +661,11 @@ chgrp # change the group of the file
 chown # change the owner of a file 
 
 # 查看当前目录文件大小
-# 方法一：列出当前目录下每个文件的大小，同时也会给出当前目录下所有文件大小总和
+# (1)列出当前目录下每个文件的大小，同时也会给出当前目录下所有文件大小总和
 ls -lht
 
-# 方法二：列出当前文件夹下所有文件对应的大小，把*替换为具体的文件名，会给出具体文件的大小
-du -sh *
+# (2)列出当前文件夹下所有文件对应的大小
+du -sh PATH
 
 # 删除文件中的空行
 cat YOUR_FILE | sed -e '/^$/d'
@@ -727,7 +701,10 @@ tar -jxvf YOUR_FILE.tar.bz2
 <h2 id="find-and-search">find and search</h2>
 <pre><code># 查找24小时内修改过的文件
 find ./ -mtime 0 
-grep -nHR &quot;search string&quot;
+# 查找当前目录及子目录中的.c文件
+find . -name &quot;*.c&quot;
+# 查找当前目录符合条件的文件内容
+grep -nHR &quot;STRING&quot; .
 </code></pre>
 <h2 id="process">process</h2>
 <pre><code>ps
@@ -736,13 +713,13 @@ kill -9 PID
 </code></pre>
 <h2 id="bash-executes-order">Bash executes order</h2>
 <pre><code># login shell executes order:  
-/etc/profile -&gt; 
-~/.bash/_profile -&gt;  
-~/.bash_login -&gt; 
+/etc/profile
+~/.bash/_profile
+~/.bash_login
 ~/.profile
 
 # non-login shell executes:  
-/etc/bashrc -&gt; 
+/etc/bashrc
 ~/.bashrc
 </code></pre>
 <h2 id="history">History</h2>
@@ -780,11 +757,11 @@ fdisk -l
 # 查看磁盘IO的性能
 iostat -x 10
 # 挂载硬盘到某个文件夹
-sudo mount /dev/sda /your/path
+sudo mount /dev/sda YOUR_PATH 
 # 查看硬盘挂载信息
 df -h
 # 取消挂载
-sudo umount /your/path
+sudo umount YOUR_PATH 
 </code></pre>
 <h2 id="删除ppa源">删除ppa源</h2>
 <pre><code class="language-sh">cd /etc/apt/sources.list.d/ # 找到关于源的文件,删除即可
@@ -800,8 +777,8 @@ sudo umount /your/path
 &lt;                      stdin从file重定向
 tee                    复制stdout
 &gt;/dev/null             直接扔掉stdout
-1&gt;file1 2&gt;file2        stdout to file1, stderr to file2
-&gt;file 2&gt;&amp;1             redirect stdout and stderr to file
+1&gt;FILE_1 2&gt;FILE_2        stdout to FILE_1, stderr to FILE_2
+&gt;FILE 2&gt;&amp;1             redirect stdout and stderr to FILE 
 2&gt;&amp;1 | tee             将stderr和stdout输出到文件的同时在屏幕上输出
 </code></pre>
 <h2 id="开机进入命令行">开机进入命令行</h2>
@@ -816,6 +793,15 @@ export https_proxy=http://127.0.0.1:1087
 <h2 id="ubuntu设置窗口键在左侧">Ubuntu设置窗口键在左侧</h2>
 <pre><code class="language-sh">gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
 </code></pre>
+<h2 id="生成强密码">生成强密码</h2>
+<pre><code class="language-sh">openssl rand -base64 NUMBER
+</code></pre>
+<h2 id="terminal-output-to-clip">terminal output to clip</h2>
+<ul>
+<li>Windows: <code>clip</code></li>
+<li>MacOS: <code>pbcopy</code>, <code>pbpaste</code></li>
+<li>Linux: <code>xsel</code></li>
+</ul>
 
     </div>
 
@@ -945,8 +931,8 @@ export https_proxy=http://127.0.0.1:1087
 
       <div class="media-body">
         <h5 class="card-title"><a href="http://lucas-wye.github.io/">ZW YE</a></h5>
-        <h6 class="card-subtitle">B.S</h6>
-        <p class="card-text">My research interests include optimization, distributed algorithm and security.</p>
+        <h6 class="card-subtitle">B.E.</h6>
+        <p class="card-text">My research interests include machine learning and security.</p>
         <ul class="network-icon" aria-hidden="true">
   
     
@@ -959,7 +945,7 @@ export https_proxy=http://127.0.0.1:1087
     
     
     <li>
-      <a href="mailto:zewenye@gmail.com" >
+      <a href="mailto:lucas.zw.ye@outlook.com" >
         <i class="fas fa-envelope"></i>
       </a>
     </li>

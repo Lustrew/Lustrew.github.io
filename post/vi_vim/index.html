@@ -27,7 +27,7 @@
   
     
   
-  <meta name="description" content="所有的 Unix Like 系统都会内建 vi 文书编辑器">
+  <meta name="description" content="所有的 Unix Like 系统都会内建 Vi 文书编辑器">
 
   
   <link rel="alternate" hreflang="en-us" href="http://lucas-wye.github.io/post/vi_vim/">
@@ -235,7 +235,7 @@
   <meta property="og:site_name" content="ZW YE">
   <meta property="og:url" content="http://lucas-wye.github.io/post/vi_vim/">
   <meta property="og:title" content="Vi/Vim/NeoVim | ZW YE">
-  <meta property="og:description" content="所有的 Unix Like 系统都会内建 vi 文书编辑器"><meta property="og:image" content="http://lucas-wye.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="og:description" content="所有的 Unix Like 系统都会内建 Vi 文书编辑器"><meta property="og:image" content="http://lucas-wye.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="http://lucas-wye.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
@@ -285,7 +285,7 @@
       "url": "http://lucas-wye.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "所有的 Unix Like 系统都会内建 vi 文书编辑器"
+  "description": "所有的 Unix Like 系统都会内建 Vi 文书编辑器"
 }
 </script>
 
@@ -489,35 +489,6 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#projects"><span>Projects</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
-        <li class="nav-item">
           <a class="nav-link " href="/#contact"><span>Contact</span></a>
         </li>
 
@@ -650,9 +621,9 @@
 
     <div class="article-style">
       <ul>
-<li>所有的 Unix Like 系统都会内建 vi 文书编辑器，其他的文书编辑器则不一定会存在。但是目前我们使用比较多的是 vim 编辑器。</li>
-<li>vim 具有程序编辑的能力，可以主动的以字体颜色辨别语法的正确性，方便程序设计。</li>
-<li>Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。简单的来说， vi 是老式的字处理器，不过功能已经很齐全了，但是还是有可以进步的地方。</li>
+<li>所有的 Unix Like 系统都会内建 Vi 文书编辑器，其他的文书编辑器则不一定会存在。但是目前我们使用比较多的是 Vim 编辑器。</li>
+<li>Vim 具有程序编辑的能力，可以主动的以字体颜色辨别语法的正确性，方便程序设计。</li>
+<li>Vim是从 Vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。简单的来说， Vi 是老式的字处理器，不过功能已经很齐全了，但是还是有可以进步的地方。</li>
 </ul>
 <h2 id="file-operation">File Operation</h2>
 <table>
@@ -672,8 +643,8 @@
 <td>退出不保存</td>
 </tr>
 <tr>
-<td>:saveas &lt;path/to/file&gt;</td>
-<td>另存为 &lt;path/to/file&gt;</td>
+<td>:saveas [path/to/file]</td>
+<td>另存为 [path/to/file]</td>
 </tr>
 <tr>
 <td>:qa!</td>
@@ -685,7 +656,7 @@
 </tr>
 <tr>
 <td>:w !sudo tee %</td>
-<td>保存正在编辑的文件</td>
+<td>以sudo保存正在编辑的文件</td>
 </tr>
 <tr>
 <td>:n</td>
@@ -696,7 +667,7 @@
 <td>回到第一个文件</td>
 </tr>
 <tr>
-<td>:edit <Filename></td>
+<td>:edit [Filename]</td>
 <td>打开新文件</td>
 </tr>
 </tbody>
@@ -715,11 +686,11 @@
 <td>move</td>
 </tr>
 <tr>
-<td>/<pattern></td>
+<td>/[PATTERN]</td>
 <td>搜索</td>
 </tr>
 <tr>
-<td>?<pattern></td>
+<td>?[PATTERN]</td>
 <td>搜索</td>
 </tr>
 <tr>
@@ -775,11 +746,11 @@
 <td>beginning of text on current line</td>
 </tr>
 <tr>
-<td><CR> F/B</td>
+<td>[CTRL] F/B</td>
 <td>move screen</td>
 </tr>
 <tr>
-<td><CR> D/U</td>
+<td>[CTRL] D/U</td>
 <td>move half screen</td>
 </tr>
 </tbody>
@@ -860,7 +831,7 @@
 <td>undo</td>
 </tr>
 <tr>
-<td><CR> r</td>
+<td>[CTRL] r</td>
 <td>redo</td>
 </tr>
 <tr>
@@ -907,7 +878,7 @@
 <td>创建分屏</td>
 </tr>
 <tr>
-<td><CR> w + 方向</td>
+<td>[CTRL] w + 方向</td>
 <td>切换分屏</td>
 </tr>
 </tbody>
@@ -930,15 +901,15 @@
 <td>display all option settings</td>
 </tr>
 <tr>
-<td>:[Addr]s/old expr/new string/[g]</td>
-<td>替换当前行/Addr的old expr为new string,[g]全局替换，否则只替换第一个 ｜</td>
+<td>:[Addr/%]s/old expr/new string/[g]</td>
+<td>替换当前行/Addr/%(文件内所有)的old expr为new string,[g]全局替换，否则只替换第一个 ｜</td>
 </tr>
 <tr>
-<td><CR> p/n</td>
+<td>[CTRL] p/n</td>
 <td>自动补齐</td>
 </tr>
 <tr>
-<td><CR> +/-</td>
+<td>[CTRL] +/-</td>
 <td>改变尺寸</td>
 </tr>
 <tr>
@@ -950,11 +921,11 @@
 <td>v-line模式</td>
 </tr>
 <tr>
-<td><CR> v</td>
+<td>[CTRL] v</td>
 <td>v-block模式</td>
 </tr>
 <tr>
-<td>:normal <Command></td>
+<td>:normal [Command]</td>
 <td>可视化模式下执行命令</td>
 </tr>
 <tr>
@@ -1049,16 +1020,16 @@
 <a href="https://github.com/Lucas-Wye/academic-kickstart/blob/master/learning/.vimrc" target="_blank" rel="noopener">.vimrc</a></p>
 <h2 id="neovimhttpsneovimio">
 <a href="https://neovim.io" target="_blank" rel="noopener">NeoVim</a></h2>
-<p>使用vim配置文件</p>
+<p>使用Vim配置文件</p>
 <pre><code class="language-sh">ln -s ~/.vim ~/.config/nvim
 ln -s ~/.vimrc ~/.config/nvim/init.vim
-
-
-## More
-See detail in these websites.  
-[Vi/Vim教程](https://www.runoob.com/linux/linux-vim.html)  
-[简明 VIM 练级攻略](https://coolshell.cn/articles/5426.html)
 </code></pre>
+<h2 id="more">More</h2>
+<p>See detail in these websites.<br>
+
+<a href="https://www.runoob.com/linux/linux-vim.html" target="_blank" rel="noopener">Vi/Vim教程</a><br>
+
+<a href="https://coolshell.cn/articles/5426.html" target="_blank" rel="noopener">简明 VIM 练级攻略</a></p>
 
     </div>
 
@@ -1188,8 +1159,8 @@ See detail in these websites.
 
       <div class="media-body">
         <h5 class="card-title"><a href="http://lucas-wye.github.io/">ZW YE</a></h5>
-        <h6 class="card-subtitle">B.S</h6>
-        <p class="card-text">My research interests include optimization, distributed algorithm and security.</p>
+        <h6 class="card-subtitle">B.E.</h6>
+        <p class="card-text">My research interests include machine learning and security.</p>
         <ul class="network-icon" aria-hidden="true">
   
     
@@ -1202,7 +1173,7 @@ See detail in these websites.
     
     
     <li>
-      <a href="mailto:zewenye@gmail.com" >
+      <a href="mailto:lucas.zw.ye@outlook.com" >
         <i class="fas fa-envelope"></i>
       </a>
     </li>
