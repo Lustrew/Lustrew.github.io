@@ -460,35 +460,6 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#posts"><span>Posts</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
-        <li class="nav-item">
           <a class="nav-link " href="/#contact"><span>Contact</span></a>
         </li>
 
@@ -638,71 +609,53 @@ sudo usermod -aG docker $USER
 # 卸载本机所有的镜像、容器、卷以及配置文件
 sudo rm -rf /var/lib/docker
 </code></pre>
-<h2 id="基本命令">基本命令</h2>
-<p>获取镜像</p>
+<h2 id="basic">Basic</h2>
+<p>Pull</p>
 <pre><code>docker pull [user name]/[repo name]:[tag name]
 </code></pre>
-<p>Dockerfile example</p>
-<pre><code># Dockerfile创建镜像
-FROM ubuntu:18.04
-ENV LANG C.UTF-8
-RUN echo &quot;deb http://mirrors.zju.edu.cn/ubuntu bionic main universe restricted multiverse\ndeb http://mirrors.zju.edu.cn/ubuntu bionic-security main universe restricted multiverse\ndeb http://mirrors.zju.edu.cn/ubuntu bionic-updates main universe restricted multiverse\ndeb http://mirrors.zju.edu.cn/ubuntu bionic-backports main universe restricted multiverse\ndeb-src http://mirrors.zju.edu.cn/ubuntu bionic main universe restricted multiverse\ndeb-src http://mirrors.zju.edu.cn/ubuntu bionic-security main universe restricted multiverse\ndeb-src http://mirrors.zju.edu.cn/ubuntu bionic-updates main universe restricted multiverse\ndeb-src http://mirrors.zju.edu.cn/ubuntu bionic-backports main universe restricted multiverse&quot; &gt; /etc/apt/sources.list
-# RUN ...
-# for pip 
-# RUN echo &quot;[global]\nindex-url = http://mirrors.aliyun.com/pypi/simple/\n[install]\ntrusted-host = mirrors.aliyun.com&quot; &gt; ~/.pip/pip.conf
-# for conda
-# RUN echo &quot;channels:\n  - https://mirrors.ustc.edu.cn/anaconda/pkgs/main/\n  - https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/\n  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/\n  - defaults\nshow_channel_urls: true&quot; &gt; ~/.condarc
-</code></pre>
-<p>运行容器</p>
-<pre><code>docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
--i: 以交互模式运行容器，通常与 -t 同时使用
--t: 为容器重新分配一个伪输入终端，通常与 -i 同时使用
--v: 绑定一个卷，格式为：本机绑定目录:容器内部绑定目录
--d: 后台运行容器，并返回容器ID
--P: 随机端口映射，容器内部端口随机映射到主机的高端口
--p: 指定端口映射，格式为：主机(宿主)端口:容器端口
--a stdin: 指定标准输入输出内容类型，可选 STDIN/STDOUT/STDERR 三项
---name: 对所新建容器进行命名
---rm: 容器终止后，自动删除容器文件
-</code></pre>
-<p>常用命令</p>
+<p>Run</p>
+<ul>
+<li>-i 以交互模式运行容器，通常与 -t 同时使用</li>
+<li>-t 为容器重新分配一个伪输入终端，通常与 -i 同时使用</li>
+<li>-v 绑定一个卷，格式为：本机绑定目录:容器内部绑定目录</li>
+<li>-d 后台运行容器，并返回容器ID</li>
+<li>-P 随机端口映射，容器内部端口随机映射到主机的高端口</li>
+<li>-p 指定端口映射，格式为：主机(宿主)端口:容器端口</li>
+<li>-a 指定标准输入输出内容类型，可选 STDIN/STDOUT/STDERR 三项</li>
+<li>&ndash;name 对所新建容器进行命名</li>
+<li>&ndash;rm 容器终止后，自动删除容器文件</li>
+</ul>
+<p>Others</p>
 <pre><code># 列出容器
 docker container ls -a 
 # 查看容器ID
 docker ps -a
 # 重新启动已被终止的指定容器
 docker start [CONTAINER ID]
-
 # 终止容器
 docker stop [CONTAINER NAME/ID]
 # 若是利用 -it 在容器内部进行操作，仅需输入 exit 即可
-
 # 删除容器
 docker kill [CONTAINER NAME/ID]
-# 若想将所有容器删除
+# 将所有容器删除
 docker container prune
-
 # 列出镜像
 docker images
 # 重命名镜像
 docker tag [old REPOSITORY]:[old TAG] or [IMAGE ID] [new REPOSITORY]:[new TAG]
 # 删除镜像
 docker rmi [IMAGE]
-
 # 存出镜像
 docker save -o [xx.tar] [REPOSITORY]:[TAG]
-
 # 载入镜像
 sudo docker load --input [镜像文件]
-
 # 更新镜像
 docker commit [OPTIONS] [IMAGE ID] [new REPOSITORY]:[new TAG]
 # -m: 提交的描述信息
 # -a: 指定镜像作者
 </code></pre>
 <h2 id="more">More</h2>
-<p>See detail in these websites.<br>
-
+<p>
 <a href="https://www.runoob.com/docker/docker-container-usage.html" target="_blank" rel="noopener">Docker教程</a><br>
 
 <a href="https://wiki.jikexueyuan.com/project/docker-technology-and-combat/save_load.html" target="_blank" rel="noopener">Docker学习笔记</a></p>
@@ -835,8 +788,8 @@ docker commit [OPTIONS] [IMAGE ID] [new REPOSITORY]:[new TAG]
 
       <div class="media-body">
         <h5 class="card-title"><a href="http://lucas-wye.github.io/">ZW YE</a></h5>
-        <h6 class="card-subtitle">B.E.</h6>
-        <p class="card-text">My research interests include machine learning and security.</p>
+        <h6 class="card-subtitle">Graduate Student</h6>
+        <p class="card-text">My research interests include machine learning and computer architecture.</p>
         <ul class="network-icon" aria-hidden="true">
   
     

@@ -460,35 +460,6 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#posts"><span>Posts</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
-        <li class="nav-item">
           <a class="nav-link " href="/#contact"><span>Contact</span></a>
         </li>
 
@@ -584,7 +555,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    2 min read
+    1 min read
   </span>
   
 
@@ -626,8 +597,7 @@
 <li>对于生成复杂表格和数学公式，这一点表现得尤为突出。因此它非常适用于生成高印刷质量的科技和数学类文档。这个系统同样适用于生成从简单的信件到完整书籍的所有其他种类的文档。</li>
 </ul>
 <h2 id="install">Install</h2>
-<p>方法一
-从
+<p>从
 <a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/" target="_blank" rel="noopener">清华镜像源</a>下载对应操作系统的Texlive软件包</p>
 <pre><code># 安装
 sudo ./install-tl   
@@ -636,32 +606,7 @@ sudo ./install-tl
 export TEX_HOME=/usr/local/texlive/2019
 export PATH=$PATH:$TEX_HOME/bin/x86_64-linux
 export INFOPATH=$INFOPATH:$TEX_HOME/texmf-dist/doc/info
-export MANPATH=$MANPATH:$TEX_HOME/texmf-dist/doc/man      
-</code></pre>
-<p>方法二
-用docker安装</p>
-<pre><code># 拉取镜像                    
-sudo docker pull ubuntu:18.04
-sudo docker run -it --rm ubuntu:18.04 bash
-# 在镜像内操作
-echo &quot;deb http://mirrors.zju.edu.cn/ubuntu bionic main universe restricted multiverse
-deb http://mirrors.zju.edu.cn/ubuntu bionic-security main universe restricted multiverse
-deb http://mirrors.zju.edu.cn/ubuntu bionic-updates main universe restricted multiverse
-deb http://mirrors.zju.edu.cn/ubuntu bionic-backports main universe restricted multiverse
-deb-src http://mirrors.zju.edu.cn/ubuntu bionic main universe restricted multiverse
-deb-src http://mirrors.zju.edu.cn/ubuntu bionic-security main universe restricted multiverse
-deb-src http://mirrors.zju.edu.cn/ubuntu bionic-updates main universe restricted multiverse
-deb-src http://mirrors.zju.edu.cn/ubuntu bionic-backports main universe restricted multiverse&quot; &gt; /etc/apt/sources.list
-apt update
-# 安装texlive
-apt install texlive-full
-
-# 保存镜像
-docker ps
-docker commit &quot;刚刚安装的镜像&quot; ubuntu-texlive
-
-# 将本地的 /home/x/tex 挂载到镜像中的 /latex 目录
-docker run -it -v /home/x/tex:/latex ubuntu-latex /bin/bash
+export MANPATH=$MANPATH:$TEX_HOME/texmf-dist/doc/man
 </code></pre>
 <h2 id="安装-windows-字体">安装 Windows 字体</h2>
 <pre><code># 创建 win 下字体专用文件夹
@@ -685,8 +630,7 @@ sudo mkfontdir
 sudo fc-cache -f -v
 </code></pre>
 <h2 id="more">More</h2>
-<p>See detail in these websites.<br>
-
+<p>
 <a href="http://github.com/Lucas-Wye/Latex_template" target="_blank" rel="noopener">LaTeX模板</a><br>
 
 <a href="http://latexstudio.net/" target="_blank" rel="noopener">LaTeX开源小屋</a></p>
@@ -819,8 +763,8 @@ sudo fc-cache -f -v
 
       <div class="media-body">
         <h5 class="card-title"><a href="http://lucas-wye.github.io/">ZW YE</a></h5>
-        <h6 class="card-subtitle">B.E.</h6>
-        <p class="card-text">My research interests include machine learning and security.</p>
+        <h6 class="card-subtitle">Graduate Student</h6>
+        <p class="card-text">My research interests include machine learning and computer architecture.</p>
         <ul class="network-icon" aria-hidden="true">
   
     

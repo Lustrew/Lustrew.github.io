@@ -460,35 +460,6 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#posts"><span>Posts</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
-        <li class="nav-item">
           <a class="nav-link " href="/#contact"><span>Contact</span></a>
         </li>
 
@@ -625,13 +596,13 @@
       <ul>
 <li>GCC编译器也称为Linux GCC命令，它有很多选项。GCC编译器是Linux下最常用的编译器。</li>
 </ul>
-<h2 id="安装">安装</h2>
+<h2 id="install">Install</h2>
 <pre><code class="language-sh"># MacOS安装Xcode工具链                                
 xcode-select --install
 # Ubuntu
 sudo apt install gcc
 </code></pre>
-<h2 id="基本使用">基本使用</h2>
+<h2 id="basic">Basic</h2>
 <pre><code class="language-sh">gcc -c filename.c # compile only, produce .o
 gcc -g # compile for debugging
 gcc -o filename.o # 
@@ -654,16 +625,17 @@ quit
 </code></pre>
 <h2 id="make">make</h2>
 <p>(1)Predefined Macros</p>
-<pre><code>AS - assembler (as)
-CC - C compiler command (cc)
-FC - Fortran compiler command (fc)
-CPP - C++ preprocessing command ($(CC) -E)
-CXX - C++ compiler command (g++)
-CFLAGS - C compiler option flags (e.g. -g)
-FFLAGS - Fortran compiler option flags (e.g. -g)
-LDFLAGS - Linking option flags (e.g. –L /usr/share/lib)
-LDLIBS – Linking libraries (e.g. -lm) 
-</code></pre>
+<ul>
+<li>AS - assembler (as)</li>
+<li>CC - C compiler command (cc)</li>
+<li>FC - Fortran compiler command (fc)</li>
+<li>CPP - C++ preprocessing command ($(CC) -E)</li>
+<li>CXX - C++ compiler command (g++)</li>
+<li>CFLAGS - C compiler option flags (e.g. -g)</li>
+<li>FFLAGS - Fortran compiler option flags (e.g. -g)</li>
+<li>LDFLAGS - Linking option flags (e.g. –L /usr/share/lib)</li>
+<li>LDLIBS – Linking libraries (e.g. -lm)</li>
+</ul>
 <p>(2)Special Internal Macros</p>
 <pre><code class="language-sh">$* # The basename of the current target
 $&lt; # The name of a dependency file, as we see on last page
@@ -671,9 +643,10 @@ $@ # The name of the current target.
 $? # The list of dependencies that are newer than the target.
 </code></pre>
 <h2 id="more">More</h2>
-<p>See detail in these websites.<br>
+<p>
+<a href="https://blog.csdn.net/gatieme/article/details/51671430" target="_blank" rel="noopener">more of gdb</a><br>
 
-<a href="https://blog.csdn.net/gatieme/article/details/51671430" target="_blank" rel="noopener">more of gdb</a></p>
+<a href="https://github.com/Lucas-Wye/misc/blob/master/learn/Makefile.example" target="_blank" rel="noopener">Makefile example</a></p>
 
     </div>
 
@@ -803,8 +776,8 @@ $? # The list of dependencies that are newer than the target.
 
       <div class="media-body">
         <h5 class="card-title"><a href="http://lucas-wye.github.io/">ZW YE</a></h5>
-        <h6 class="card-subtitle">B.E.</h6>
-        <p class="card-text">My research interests include machine learning and security.</p>
+        <h6 class="card-subtitle">Graduate Student</h6>
+        <p class="card-text">My research interests include machine learning and computer architecture.</p>
         <ul class="network-icon" aria-hidden="true">
   
     

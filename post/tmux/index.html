@@ -460,35 +460,6 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#posts"><span>Posts</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
-        <li class="nav-item">
           <a class="nav-link " href="/#contact"><span>Contact</span></a>
         </li>
 
@@ -631,14 +602,14 @@ sudo apt-get install tmux
 brew install tmux
 </code></pre>
 <h2 id="基本操作">基本操作</h2>
-<pre><code class="language-sh"># 新建会话                                
+<pre><code class="language-pYTHON"># 新建会话                                
 tmux # 新建一个无名称的会话
 tmux new -s demo # 新建一个名称为demo的会话
 # 进入之前会话
 tmux a # 默认进入第一个会话
 tmux a -t demo # 进入到名称为demo的会话
 # 离开会话
-ctrl+b+d
+[CTRL B] d
 # 关闭会话
 tmux kill-session -t demo # 关闭demo会话
 tmux kill-server # 关闭服务器，所有的会话都将关闭
@@ -646,20 +617,25 @@ tmux kill-server # 关闭服务器，所有的会话都将关闭
 tmux list-session # 查看所有会话
 tmux ls # 查看所有会话，提倡使用简写形式
 
-# 垂直分屏
-ctrl+b+% 
-# 水平分屏
-ctrl+b+\&quot; 
-# 根据按箭方向选择切换到某个pane。
-ctrl+b+Up|Down|Left|Right 
+# 滚屏/cope mode
+[CTRL B] [  
+# 设置滚屏vi快捷键
+echo &quot;setw -g mode-keys vi&quot; &gt;  ~/.tmux.conf
+tmux source-file ~/.tmux.conf
+# copy
+[CTRL B] [  -&gt; [Space] -&gt; Select -&gt; [Enter]
+# paste
+[CTRL B] ]
 
-# 滚屏
-# 要进入copy-mode，即PREFIX+[，然后就可以用上下键来滚动屏幕，配置了vi快捷键模式，
-# 就可以像操作vi一样来滚动屏幕，非常的方便。退出直接按‘q’键即可。
+# 切换pane
+[CTRL B] Up|Down|Left|Right 
+# 垂直分屏
+[CTRL B] % 
+# 水平分屏
+[CTRL B] &quot;
 </code></pre>
 <h2 id="more">More</h2>
-<p>See detail in these websites.<br>
-
+<p>
 <a href="http://louiszhai.github.io/2017/09/30/tmux/" target="_blank" rel="noopener">Tmux使用手册</a></p>
 
     </div>
@@ -790,8 +766,8 @@ ctrl+b+Up|Down|Left|Right
 
       <div class="media-body">
         <h5 class="card-title"><a href="http://lucas-wye.github.io/">ZW YE</a></h5>
-        <h6 class="card-subtitle">B.E.</h6>
-        <p class="card-text">My research interests include machine learning and security.</p>
+        <h6 class="card-subtitle">Graduate Student</h6>
+        <p class="card-text">My research interests include machine learning and computer architecture.</p>
         <ul class="network-icon" aria-hidden="true">
   
     

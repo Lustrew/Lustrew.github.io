@@ -137,8 +137,7 @@ curl -O https://www.example.com/foo/bar.html
 curl -C -O http://www.gnu.org/software/gettext/manual/gettext.html
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;more&#34;&gt;More&lt;/h2&gt;
-&lt;p&gt;See detail in these websites.&lt;br&gt;
-
+&lt;p&gt;
 &lt;a href=&#34;https://www.qingtingip.com/h_189554.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;nmcli用法&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
@@ -206,9 +205,8 @@ curl -C -O http://www.gnu.org/software/gettext/manual/gettext.html
 &lt;a href=&#34;https://zh.wikihow.com/%e6%90%9c%e7%b4%a2%e6%b7%b1%e7%bd%91&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://zh.wikihow.com/搜索深网&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;more &lt;a href=&#34;https://www.freebuf.com/news/137844.html&#34;&gt;https://www.freebuf.com/news/137844.html&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;more&#34;&gt;More&lt;/h2&gt;
-&lt;p&gt;See detail in these websites.&lt;br&gt;
-
-&lt;a href=&#34;https://github.com/Lucas-Wye/academic-kickstart/blob/master/learning/search.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;search.pdf&lt;/a&gt;&lt;br&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://github.com/Lucas-Wye/misc/blob/master/share/search.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;search.pdf&lt;/a&gt;&lt;br&gt;
 
 &lt;a href=&#34;https://www.zhihu.com/question/19847393&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;搜索引擎有哪些常用技巧&lt;/a&gt;&lt;br&gt;
 
@@ -221,8 +219,8 @@ curl -C -O http://www.gnu.org/software/gettext/manual/gettext.html
       <link>http://lucas-wye.github.io/post/matlab/</link>
       <pubDate>Wed, 06 May 2020 12:12:38 +0800</pubDate>
       <guid>http://lucas-wye.github.io/post/matlab/</guid>
-      <description>&lt;p&gt;See 
-&lt;a href=&#34;https://github.com/Lucas-Wye/academic-kickstart/blob/master/learning/matlab_share.pptx&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;
+&lt;a href=&#34;https://github.com/Lucas-Wye/misc/blob/master/share/matlab_share.pptx&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Click here&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -232,7 +230,7 @@ curl -C -O http://www.gnu.org/software/gettext/manual/gettext.html
       <pubDate>Mon, 27 Apr 2020 16:16:14 +0800</pubDate>
       <guid>http://lucas-wye.github.io/post/ask/</guid>
       <description>&lt;p&gt;
-&lt;a href=&#34;http://www.catb.org/%7Eesr/faqs/smart-questions.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;See Detail From Here&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;http://www.catb.org/%7Eesr/faqs/smart-questions.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Click here&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -247,8 +245,7 @@ curl -C -O http://www.gnu.org/software/gettext/manual/gettext.html
 &lt;li&gt;对于生成复杂表格和数学公式，这一点表现得尤为突出。因此它非常适用于生成高印刷质量的科技和数学类文档。这个系统同样适用于生成从简单的信件到完整书籍的所有其他种类的文档。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
-&lt;p&gt;方法一
-从
+&lt;p&gt;从
 &lt;a href=&#34;https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;清华镜像源&lt;/a&gt;下载对应操作系统的Texlive软件包&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;# 安装
 sudo ./install-tl   
@@ -257,32 +254,7 @@ sudo ./install-tl
 export TEX_HOME=/usr/local/texlive/2019
 export PATH=$PATH:$TEX_HOME/bin/x86_64-linux
 export INFOPATH=$INFOPATH:$TEX_HOME/texmf-dist/doc/info
-export MANPATH=$MANPATH:$TEX_HOME/texmf-dist/doc/man      
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;方法二
-用docker安装&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# 拉取镜像                    
-sudo docker pull ubuntu:18.04
-sudo docker run -it --rm ubuntu:18.04 bash
-# 在镜像内操作
-echo &amp;quot;deb http://mirrors.zju.edu.cn/ubuntu bionic main universe restricted multiverse
-deb http://mirrors.zju.edu.cn/ubuntu bionic-security main universe restricted multiverse
-deb http://mirrors.zju.edu.cn/ubuntu bionic-updates main universe restricted multiverse
-deb http://mirrors.zju.edu.cn/ubuntu bionic-backports main universe restricted multiverse
-deb-src http://mirrors.zju.edu.cn/ubuntu bionic main universe restricted multiverse
-deb-src http://mirrors.zju.edu.cn/ubuntu bionic-security main universe restricted multiverse
-deb-src http://mirrors.zju.edu.cn/ubuntu bionic-updates main universe restricted multiverse
-deb-src http://mirrors.zju.edu.cn/ubuntu bionic-backports main universe restricted multiverse&amp;quot; &amp;gt; /etc/apt/sources.list
-apt update
-# 安装texlive
-apt install texlive-full
-
-# 保存镜像
-docker ps
-docker commit &amp;quot;刚刚安装的镜像&amp;quot; ubuntu-texlive
-
-# 将本地的 /home/x/tex 挂载到镜像中的 /latex 目录
-docker run -it -v /home/x/tex:/latex ubuntu-latex /bin/bash
+export MANPATH=$MANPATH:$TEX_HOME/texmf-dist/doc/man
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;安装-windows-字体&#34;&gt;安装 Windows 字体&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;# 创建 win 下字体专用文件夹
@@ -306,50 +278,10 @@ sudo mkfontdir
 sudo fc-cache -f -v
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;more&#34;&gt;More&lt;/h2&gt;
-&lt;p&gt;See detail in these websites.&lt;br&gt;
-
+&lt;p&gt;
 &lt;a href=&#34;http://github.com/Lucas-Wye/Latex_template&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LaTeX模板&lt;/a&gt;&lt;br&gt;
 
 &lt;a href=&#34;http://latexstudio.net/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LaTeX开源小屋&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>SS</title>
-      <link>http://lucas-wye.github.io/post/ss/</link>
-      <pubDate>Mon, 27 Apr 2020 16:10:05 +0800</pubDate>
-      <guid>http://lucas-wye.github.io/post/ss/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;Shadowsocks（简称SS）是一種基於Socks5代理方式的加密傳輸协议，也可以指实现這個协议的各種开发包。&lt;/li&gt;
-&lt;li&gt;目前套件使用Python、C、C++、C#、Go语言、Rust等程式語言开发，大部分主要实现（iOS平台的除外）採用Apache许可证、GPL、MIT許可證等多種自由軟體許可協定開放原始碼。&lt;/li&gt;
-&lt;li&gt;Shadowsocks分为服务器端和客户端，在使用之前，需要先将服务器端程序部署到服务器上面，然后通过客户端连接并建立本地代理。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;# Ubuntu  
-sudo apt install shadowsocks
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;使用&#34;&gt;使用&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;# 方法一                        
-# Edit the configuration file
-sudo vim /etc/shadowsocks-libev/config.json
-
-# Edit the default configuration for debian
-sudo vim /etc/default/shadowsocks-libev
-
-# Start the service
-sudo /etc/init.d/shadowsocks-libev start
-## or
-sudo systemctl start shadowsocks-libev
-
-# 方法二
-ss-local -c /path/to/config.json
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;more&#34;&gt;More&lt;/h2&gt;
-&lt;p&gt;See detail in these websites.&lt;br&gt;
-
-&lt;a href=&#34;https://github.com/shadowsocksr-backup/shadowsocksr-libev/blob/master/README.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;安装教程&lt;/a&gt;&lt;br&gt;
-
-&lt;a href=&#34;https://www.sundabao.com/ubuntu%e4%bd%bf%e7%94%a8shadowsocks/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;配置浏览器&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -365,9 +297,9 @@ ss-local -c /path/to/config.json
 &lt;/ul&gt;
 &lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
 &lt;p&gt;从
-&lt;a href=&#34;https://golang.google.cn/dl/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;此网站&lt;/a&gt;下载对应平台的编译器安装即可。&lt;/p&gt;
+&lt;a href=&#34;https://golang.google.cn/dl/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;官网&lt;/a&gt;下载对应平台的编译器&lt;/p&gt;
 &lt;h2 id=&#34;设置国内代理&#34;&gt;设置国内代理&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;go env -w GOPROXY=https://goproxy.cn,direct
+&lt;pre&gt;&lt;code&gt;go env -w GOPROXY=https://goproxy.cn, direct
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;设置环境变量&#34;&gt;设置环境变量&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;# Golang
@@ -378,8 +310,7 @@ export GOPATH=... # 指定一个本地位置
 export PATH=$PATH:$GOPATH/bin
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;more&#34;&gt;More&lt;/h2&gt;
-&lt;p&gt;See detail in these websites. &lt;br&gt;
-
+&lt;p&gt;
 &lt;a href=&#34;https://www.runoob.com/go/go-tutorial.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;go教程&lt;/a&gt;&lt;br&gt;
 
 &lt;a href=&#34;https://www.w3cschool.cn/yqbmht/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;go web教程&lt;/a&gt;&lt;/p&gt;
@@ -398,68 +329,45 @@ export PATH=$PATH:$GOPATH/bin
 &lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
 &lt;p&gt;从
 &lt;a href=&#34;https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;清华镜像源&lt;/a&gt;下载对应平台的 anaconda/miniconda 安装即可。&lt;/p&gt;
-&lt;h2 id=&#34;添加软件包下载镜像源&#34;&gt;添加软件包下载镜像源&lt;/h2&gt;
-&lt;p&gt;编辑~/.condarc文件&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;channels:
-    - https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
-    - https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/
-    - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
-- defaults
-    show_channel_urls: true
-&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;conda创建python虚拟环境&#34;&gt;conda创建python虚拟环境&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;# 查看当前存在哪些虚拟环境                                
-conda env list  
+conda env list
+## or
 conda info -e 
 # 创建虚拟环境
 conda create -n your_env_name python=X.X  # 版本选择：2.7、3.6等
 # 激活环境
 conda activate your_env_name
-# 安装package到your_env_name
-conda install -n your_env_name [package]
 # 关闭虚拟环境
 conda deactivate
-# 删除虚拟环境
-conda remove -n your_env_name --all
+# 安装package到your_env_name
+conda install -n your_env_name package_name
 # 删除环境中的某个包
 conda remove --name your_env_name package_name
+# 删除虚拟环境
+conda remove -n your_env_name --all
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;常用包安装方法&#34;&gt;常用包安装方法&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;# tensorflow
 conda install tensorflow
 # pytorch(CPU)
 conda install pytorch torchvision cpuonly -c pytorch
-## 查看版本
-import torch
-print(torch.__version__)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;conda导出环境依赖&#34;&gt;conda导出环境依赖&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;conda list -e &amp;gt; requirements.txt
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;jupyter-notebook&#34;&gt;Jupyter notebook&lt;/h3&gt;
-&lt;p&gt;默认情况下，安装好 Anaconda 后打开 jupyter notebook, 访问本地 localhost:8888 即可。
-但是如果要访问另一台机器，比如远端服务器上的 notebook, 即默认是不支持 ip addr:8888 的访问，需要额外配置。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# 生成一个 notebook 配置文件
-# 默认情况下,配置文件 ~/.jupyter/jupyter_notebook_config.py 并不存在
+&lt;p&gt;访问远程服务器的notebook配置：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;# 生成一个 notebook 配置文件
 jupyter notebook --generate-config
 # 生成密码
 jupyter notebook password
-# 修改配置文件 ～/.jupyter/jupyter_notebook_config.py
-c.NotebookApp.ip = &#39;*&#39; # 允许任何IP访问
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;修改配置文件 ~/.jupyter/jupyter_notebook_config.py&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-Python&#34;&gt;c.NotebookApp.ip = &#39;*&#39; # 允许任何IP访问
 c.NotebookApp.password = u&#39;sha:...&#39; # 密码的哈希值
 c.NotebookApp.open_browser = False 
 c.NotebookApp.port = 8888 # 自行指定一个端口
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;添加多种环境&#34;&gt;添加多种环境&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;# 进入每个虚拟环境
-conda activate env_name
-conda install ipykernel
-# 退出该虚拟环境
-conda activate base
-# 然后再将这个kernal添加到jupyter里面，NAME为自己取的环境名字
-python -m ipykernel install --user --name NAME --display-name &amp;quot;NAME&amp;quot;
-# 查看已有的kernels
-cd ~/.local/share/jupyter/kernels  
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;pip&#34;&gt;pip&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;# 导入依赖包                                
@@ -473,13 +381,11 @@ pip freeze &amp;gt; requirements.txt
 pip download -d [DIR] -r requirements.txt 
 # 离线安装
 pip install --no-index --find-links=[DIR] -r requirements.txt  
-
 # 更改镜像源
 echo &amp;quot;[global]\nindex-url = http://mirrors.aliyun.com/pypi/simple/\n[install]\ntrusted-host = mirrors.aliyun.com&amp;quot; &amp;gt; ~/.pip/pip.conf 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;more&#34;&gt;More&lt;/h2&gt;
-&lt;p&gt;See detail in these websites.&lt;br&gt;
-
+&lt;p&gt;
 &lt;a href=&#34;http://nbviewer.jupyter.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ipynb文件在线查看工具&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
@@ -500,14 +406,14 @@ sudo apt-get install tmux
 brew install tmux
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;基本操作&#34;&gt;基本操作&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;# 新建会话                                
+&lt;pre&gt;&lt;code class=&#34;language-pYTHON&#34;&gt;# 新建会话                                
 tmux # 新建一个无名称的会话
 tmux new -s demo # 新建一个名称为demo的会话
 # 进入之前会话
 tmux a # 默认进入第一个会话
 tmux a -t demo # 进入到名称为demo的会话
 # 离开会话
-ctrl+b+d
+[CTRL B] d
 # 关闭会话
 tmux kill-session -t demo # 关闭demo会话
 tmux kill-server # 关闭服务器，所有的会话都将关闭
@@ -515,20 +421,25 @@ tmux kill-server # 关闭服务器，所有的会话都将关闭
 tmux list-session # 查看所有会话
 tmux ls # 查看所有会话，提倡使用简写形式
 
-# 垂直分屏
-ctrl+b+% 
-# 水平分屏
-ctrl+b+\&amp;quot; 
-# 根据按箭方向选择切换到某个pane。
-ctrl+b+Up|Down|Left|Right 
+# 滚屏/cope mode
+[CTRL B] [  
+# 设置滚屏vi快捷键
+echo &amp;quot;setw -g mode-keys vi&amp;quot; &amp;gt;  ~/.tmux.conf
+tmux source-file ~/.tmux.conf
+# copy
+[CTRL B] [  -&amp;gt; [Space] -&amp;gt; Select -&amp;gt; [Enter]
+# paste
+[CTRL B] ]
 
-# 滚屏
-# 要进入copy-mode，即PREFIX+[，然后就可以用上下键来滚动屏幕，配置了vi快捷键模式，
-# 就可以像操作vi一样来滚动屏幕，非常的方便。退出直接按‘q’键即可。
+# 切换pane
+[CTRL B] Up|Down|Left|Right 
+# 垂直分屏
+[CTRL B] % 
+# 水平分屏
+[CTRL B] &amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;more&#34;&gt;More&lt;/h2&gt;
-&lt;p&gt;See detail in these websites.&lt;br&gt;
-
+&lt;p&gt;
 &lt;a href=&#34;http://louiszhai.github.io/2017/09/30/tmux/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tmux使用手册&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
@@ -543,9 +454,9 @@ ctrl+b+Up|Down|Left|Right
 &lt;/ul&gt;
 &lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://www.oracle.com/technetwork/java/javase/downloads/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;下载JDK&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.oracle.com/technetwork/java/javase/downloads/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;JDK&lt;/a&gt;&lt;br&gt;
 
-&lt;a href=&#34;https://www.jetbrains.com/idea/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IntelliJ IDEA下载&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://www.jetbrains.com/idea/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;IntelliJ IDEA&lt;/a&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;# 配置环境变量                                
 export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_144  # 这里换成自己的jdk目录
 export JRE_HOME=${JAVA_HOME}/jre  
@@ -963,7 +874,7 @@ pm uninstall -k --user 0 package_name
 &lt;p&gt;&lt;a href=&#34;https://github.com/junegunn/vim-plug&#34;&gt;https://github.com/junegunn/vim-plug&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;vimrc&#34;&gt;.vimrc&lt;/h2&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://github.com/Lucas-Wye/academic-kickstart/blob/master/learning/.vimrc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;.vimrc&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://github.com/Lucas-Wye/misc/blob/master/configuration/.vimrc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;.vimrc&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;neovimhttpsneovimio&#34;&gt;
 &lt;a href=&#34;https://neovim.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;NeoVim&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;使用Vim配置文件&lt;/p&gt;
@@ -971,43 +882,10 @@ pm uninstall -k --user 0 package_name
 ln -s ~/.vimrc ~/.config/nvim/init.vim
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;more&#34;&gt;More&lt;/h2&gt;
-&lt;p&gt;See detail in these websites.&lt;br&gt;
-
+&lt;p&gt;
 &lt;a href=&#34;https://www.runoob.com/linux/linux-vim.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Vi/Vim教程&lt;/a&gt;&lt;br&gt;
 
 &lt;a href=&#34;https://coolshell.cn/articles/5426.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;简明 VIM 练级攻略&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Website</title>
-      <link>http://lucas-wye.github.io/post/website/</link>
-      <pubDate>Fri, 27 Mar 2020 16:23:44 +0800</pubDate>
-      <guid>http://lucas-wye.github.io/post/website/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;收录了一些目前的常用网站&lt;/li&gt;
-&lt;li&gt;Here are some useful websites. Hope these will help you.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;repo&#34;&gt;Repo&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://zjusct.github.io/archives/&#34;&gt;https://zjusct.github.io/archives/&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;https://pmpml.github.io/PMPML16/&#34;&gt;https://pmpml.github.io/PMPML16/&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;https://github.com/momodel/AIClub&#34;&gt;https://github.com/momodel/AIClub&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;https://machine-learning-and-security.github.io/&#34;&gt;https://machine-learning-and-security.github.io/&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;https://ying-zhang.github.io/misc/2016/we-love-paper/&#34;&gt;https://ying-zhang.github.io/misc/2016/we-love-paper/&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;https://daiwk.github.io/posts/dl-federated-learning.html&#34;&gt;https://daiwk.github.io/posts/dl-federated-learning.html&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;paper&#34;&gt;Paper&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://arxiv.org/&#34;&gt;https://arxiv.org/&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;https://scholar.google.com/&#34;&gt;https://scholar.google.com/&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;http://www.arxiv-sanity.com/&#34;&gt;http://www.arxiv-sanity.com/&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;http://scholar.chongbuluo.com&#34;&gt;http://scholar.chongbuluo.com&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;http://libweb.zju.edu.cn/libweb/&#34;&gt;http://libweb.zju.edu.cn/libweb/&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;https://ieeexplore.ieee.org/Xplore/home.jsp&#34;&gt;https://ieeexplore.ieee.org/Xplore/home.jsp&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;https://paperpass.com/&#34;&gt;https://paperpass.com/&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;http://dsa.dayainfo.com/&#34;&gt;http://dsa.dayainfo.com/&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;http://www.myhuiban.com/&#34;&gt;http://www.myhuiban.com/&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;https://www.ccf.org.cn/xspj/gyml/&#34;&gt;https://www.ccf.org.cn/xspj/gyml/&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;http://jianying.space/conference-ranking.html&#34;&gt;http://jianying.space/conference-ranking.html&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;http://faculty.cs.tamu.edu/guofei/sec_conf_stat.htm&#34;&gt;http://faculty.cs.tamu.edu/guofei/sec_conf_stat.htm&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -1026,40 +904,8 @@ docker pull kalilinux/kali-linux-docker
 # 运行
 docker run -t -i kalilinux/kali-linux-docker /bin/bash
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;###设置镜像源&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# 修改/etc/apt/source.list
-# 中科大
-deb http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib
-deb-src http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib
- 
-# 阿里云
-deb http://mirrors.aliyun.com/kali kali-rolling main non-free contrib
-deb-src http://mirrors.aliyun.com/kali kali-rolling main non-free contrib
- 
-# 清华
-deb http://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free
-deb-src https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free
- 
-# 浙大
-deb http://mirrors.zju.edu.cn/kali kali-rolling main contrib non-free
-deb-src http://mirrors.zju.edu.cn/kali kali-rolling main contrib non-free
- 
-# 官方源
-deb http://http.kali.org/kali kali-rolling main non-free contrib
-deb-src http://http.kali.org/kali kali-rolling main non-free contrib
- 
-deb http://mirrors.163.com/debian/ jessie main non-free contrib
-deb http://mirrors.163.com/debian/ jessie-updates main non-free contrib
-deb http://mirrors.163.com/debian/ jessie-backports main non-free contrib
-deb-src http://mirrors.163.com/debian/ jessie main non-free contrib
-deb-src http://mirrors.163.com/debian/ jessie-updates main non-free contrib
-deb-src http://mirrors.163.com/debian/ jessie-backports main non-free contrib
-deb http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib
-deb-src http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib
-&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;more&#34;&gt;More&lt;/h2&gt;
-&lt;p&gt;See detail in these websites.&lt;br&gt;
-
+&lt;p&gt;
 &lt;a href=&#34;https://www.kali.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;kali官网&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
@@ -1085,71 +931,53 @@ sudo usermod -aG docker $USER
 # 卸载本机所有的镜像、容器、卷以及配置文件
 sudo rm -rf /var/lib/docker
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;基本命令&#34;&gt;基本命令&lt;/h2&gt;
-&lt;p&gt;获取镜像&lt;/p&gt;
+&lt;h2 id=&#34;basic&#34;&gt;Basic&lt;/h2&gt;
+&lt;p&gt;Pull&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;docker pull [user name]/[repo name]:[tag name]
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Dockerfile example&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# Dockerfile创建镜像
-FROM ubuntu:18.04
-ENV LANG C.UTF-8
-RUN echo &amp;quot;deb http://mirrors.zju.edu.cn/ubuntu bionic main universe restricted multiverse\ndeb http://mirrors.zju.edu.cn/ubuntu bionic-security main universe restricted multiverse\ndeb http://mirrors.zju.edu.cn/ubuntu bionic-updates main universe restricted multiverse\ndeb http://mirrors.zju.edu.cn/ubuntu bionic-backports main universe restricted multiverse\ndeb-src http://mirrors.zju.edu.cn/ubuntu bionic main universe restricted multiverse\ndeb-src http://mirrors.zju.edu.cn/ubuntu bionic-security main universe restricted multiverse\ndeb-src http://mirrors.zju.edu.cn/ubuntu bionic-updates main universe restricted multiverse\ndeb-src http://mirrors.zju.edu.cn/ubuntu bionic-backports main universe restricted multiverse&amp;quot; &amp;gt; /etc/apt/sources.list
-# RUN ...
-# for pip 
-# RUN echo &amp;quot;[global]\nindex-url = http://mirrors.aliyun.com/pypi/simple/\n[install]\ntrusted-host = mirrors.aliyun.com&amp;quot; &amp;gt; ~/.pip/pip.conf
-# for conda
-# RUN echo &amp;quot;channels:\n  - https://mirrors.ustc.edu.cn/anaconda/pkgs/main/\n  - https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/\n  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/\n  - defaults\nshow_channel_urls: true&amp;quot; &amp;gt; ~/.condarc
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;运行容器&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
--i: 以交互模式运行容器，通常与 -t 同时使用
--t: 为容器重新分配一个伪输入终端，通常与 -i 同时使用
--v: 绑定一个卷，格式为：本机绑定目录:容器内部绑定目录
--d: 后台运行容器，并返回容器ID
--P: 随机端口映射，容器内部端口随机映射到主机的高端口
--p: 指定端口映射，格式为：主机(宿主)端口:容器端口
--a stdin: 指定标准输入输出内容类型，可选 STDIN/STDOUT/STDERR 三项
---name: 对所新建容器进行命名
---rm: 容器终止后，自动删除容器文件
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;常用命令&lt;/p&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;-i 以交互模式运行容器，通常与 -t 同时使用&lt;/li&gt;
+&lt;li&gt;-t 为容器重新分配一个伪输入终端，通常与 -i 同时使用&lt;/li&gt;
+&lt;li&gt;-v 绑定一个卷，格式为：本机绑定目录:容器内部绑定目录&lt;/li&gt;
+&lt;li&gt;-d 后台运行容器，并返回容器ID&lt;/li&gt;
+&lt;li&gt;-P 随机端口映射，容器内部端口随机映射到主机的高端口&lt;/li&gt;
+&lt;li&gt;-p 指定端口映射，格式为：主机(宿主)端口:容器端口&lt;/li&gt;
+&lt;li&gt;-a 指定标准输入输出内容类型，可选 STDIN/STDOUT/STDERR 三项&lt;/li&gt;
+&lt;li&gt;&amp;ndash;name 对所新建容器进行命名&lt;/li&gt;
+&lt;li&gt;&amp;ndash;rm 容器终止后，自动删除容器文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Others&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;# 列出容器
 docker container ls -a 
 # 查看容器ID
 docker ps -a
 # 重新启动已被终止的指定容器
 docker start [CONTAINER ID]
-
 # 终止容器
 docker stop [CONTAINER NAME/ID]
 # 若是利用 -it 在容器内部进行操作，仅需输入 exit 即可
-
 # 删除容器
 docker kill [CONTAINER NAME/ID]
-# 若想将所有容器删除
+# 将所有容器删除
 docker container prune
-
 # 列出镜像
 docker images
 # 重命名镜像
 docker tag [old REPOSITORY]:[old TAG] or [IMAGE ID] [new REPOSITORY]:[new TAG]
 # 删除镜像
 docker rmi [IMAGE]
-
 # 存出镜像
 docker save -o [xx.tar] [REPOSITORY]:[TAG]
-
 # 载入镜像
 sudo docker load --input [镜像文件]
-
 # 更新镜像
 docker commit [OPTIONS] [IMAGE ID] [new REPOSITORY]:[new TAG]
 # -m: 提交的描述信息
 # -a: 指定镜像作者
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;more&#34;&gt;More&lt;/h2&gt;
-&lt;p&gt;See detail in these websites.&lt;br&gt;
-
+&lt;p&gt;
 &lt;a href=&#34;https://www.runoob.com/docker/docker-container-usage.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Docker教程&lt;/a&gt;&lt;br&gt;
 
 &lt;a href=&#34;https://wiki.jikexueyuan.com/project/docker-technology-and-combat/save_load.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Docker学习笔记&lt;/a&gt;&lt;/p&gt;
@@ -1164,13 +992,13 @@ docker commit [OPTIONS] [IMAGE ID] [new REPOSITORY]:[new TAG]
       <description>&lt;ul&gt;
 &lt;li&gt;GCC编译器也称为Linux GCC命令，它有很多选项。GCC编译器是Linux下最常用的编译器。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;# MacOS安装Xcode工具链                                
 xcode-select --install
 # Ubuntu
 sudo apt install gcc
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;基本使用&#34;&gt;基本使用&lt;/h2&gt;
+&lt;h2 id=&#34;basic&#34;&gt;Basic&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;gcc -c filename.c # compile only, produce .o
 gcc -g # compile for debugging
 gcc -o filename.o # 
@@ -1193,16 +1021,17 @@ quit
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;make&#34;&gt;make&lt;/h2&gt;
 &lt;p&gt;(1)Predefined Macros&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;AS - assembler (as)
-CC - C compiler command (cc)
-FC - Fortran compiler command (fc)
-CPP - C++ preprocessing command ($(CC) -E)
-CXX - C++ compiler command (g++)
-CFLAGS - C compiler option flags (e.g. -g)
-FFLAGS - Fortran compiler option flags (e.g. -g)
-LDFLAGS - Linking option flags (e.g. –L /usr/share/lib)
-LDLIBS – Linking libraries (e.g. -lm) 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;AS - assembler (as)&lt;/li&gt;
+&lt;li&gt;CC - C compiler command (cc)&lt;/li&gt;
+&lt;li&gt;FC - Fortran compiler command (fc)&lt;/li&gt;
+&lt;li&gt;CPP - C++ preprocessing command ($(CC) -E)&lt;/li&gt;
+&lt;li&gt;CXX - C++ compiler command (g++)&lt;/li&gt;
+&lt;li&gt;CFLAGS - C compiler option flags (e.g. -g)&lt;/li&gt;
+&lt;li&gt;FFLAGS - Fortran compiler option flags (e.g. -g)&lt;/li&gt;
+&lt;li&gt;LDFLAGS - Linking option flags (e.g. –L /usr/share/lib)&lt;/li&gt;
+&lt;li&gt;LDLIBS – Linking libraries (e.g. -lm)&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;(2)Special Internal Macros&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$* # The basename of the current target
 $&amp;lt; # The name of a dependency file, as we see on last page
@@ -1210,9 +1039,10 @@ $@ # The name of the current target.
 $? # The list of dependencies that are newer than the target.
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;more&#34;&gt;More&lt;/h2&gt;
-&lt;p&gt;See detail in these websites.&lt;br&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://blog.csdn.net/gatieme/article/details/51671430&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;more of gdb&lt;/a&gt;&lt;br&gt;
 
-&lt;a href=&#34;https://blog.csdn.net/gatieme/article/details/51671430&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;more of gdb&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://github.com/Lucas-Wye/misc/blob/master/learn/Makefile.example&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Makefile example&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -1312,8 +1142,7 @@ git submodule update --init --recursive
 git clone &amp;lt;仓库地址&amp;gt; --recursive
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;more&#34;&gt;More&lt;/h2&gt;
-&lt;p&gt;See detail in these websites.&lt;br&gt;
-
+&lt;p&gt;
 &lt;a href=&#34;https://www.runoob.com/git/git-tutorial.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;git教程&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
@@ -1540,8 +1369,7 @@ int main(void) {
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;more-example&#34;&gt;More Example&lt;/h2&gt;
-&lt;p&gt;See detail in these websites.&lt;br&gt;
-
+&lt;p&gt;
 &lt;a href=&#34;https://zhuanlan.zhihu.com/p/51173703&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OpenMP并行开发（C++） &lt;/a&gt;&lt;br&gt;
 
 &lt;a href=&#34;https://blog.csdn.net/drzhouweiming/article/details/1175848&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OpenMP并行程序设计（二）&lt;/a&gt;&lt;/p&gt;

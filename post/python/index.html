@@ -460,35 +460,6 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#posts"><span>Posts</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
-        <li class="nav-item">
           <a class="nav-link " href="/#contact"><span>Contact</span></a>
         </li>
 
@@ -584,7 +555,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    2 min read
+    1 min read
   </span>
   
 
@@ -627,68 +598,45 @@
 <h2 id="install">Install</h2>
 <p>从
 <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/" target="_blank" rel="noopener">清华镜像源</a>下载对应平台的 anaconda/miniconda 安装即可。</p>
-<h2 id="添加软件包下载镜像源">添加软件包下载镜像源</h2>
-<p>编辑~/.condarc文件</p>
-<pre><code>channels:
-    - https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
-    - https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/
-    - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
-- defaults
-    show_channel_urls: true
-</code></pre>
 <h2 id="conda创建python虚拟环境">conda创建python虚拟环境</h2>
 <pre><code># 查看当前存在哪些虚拟环境                                
-conda env list  
+conda env list
+## or
 conda info -e 
 # 创建虚拟环境
 conda create -n your_env_name python=X.X  # 版本选择：2.7、3.6等
 # 激活环境
 conda activate your_env_name
-# 安装package到your_env_name
-conda install -n your_env_name [package]
 # 关闭虚拟环境
 conda deactivate
-# 删除虚拟环境
-conda remove -n your_env_name --all
+# 安装package到your_env_name
+conda install -n your_env_name package_name
 # 删除环境中的某个包
 conda remove --name your_env_name package_name
+# 删除虚拟环境
+conda remove -n your_env_name --all
 </code></pre>
 <h2 id="常用包安装方法">常用包安装方法</h2>
 <pre><code class="language-sh"># tensorflow
 conda install tensorflow
 # pytorch(CPU)
 conda install pytorch torchvision cpuonly -c pytorch
-## 查看版本
-import torch
-print(torch.__version__)
 </code></pre>
 <h3 id="conda导出环境依赖">conda导出环境依赖</h3>
 <pre><code>conda list -e &gt; requirements.txt
 </code></pre>
 <h3 id="jupyter-notebook">Jupyter notebook</h3>
-<p>默认情况下，安装好 Anaconda 后打开 jupyter notebook, 访问本地 localhost:8888 即可。
-但是如果要访问另一台机器，比如远端服务器上的 notebook, 即默认是不支持 ip addr:8888 的访问，需要额外配置。</p>
-<pre><code># 生成一个 notebook 配置文件
-# 默认情况下,配置文件 ~/.jupyter/jupyter_notebook_config.py 并不存在
+<p>访问远程服务器的notebook配置：</p>
+<pre><code class="language-sh"># 生成一个 notebook 配置文件
 jupyter notebook --generate-config
 # 生成密码
 jupyter notebook password
-# 修改配置文件 ～/.jupyter/jupyter_notebook_config.py
-c.NotebookApp.ip = '*' # 允许任何IP访问
+</code></pre>
+<p>修改配置文件 ~/.jupyter/jupyter_notebook_config.py</p>
+<pre><code class="language-Python">c.NotebookApp.ip = '*' # 允许任何IP访问
 c.NotebookApp.password = u'sha:...' # 密码的哈希值
 c.NotebookApp.open_browser = False 
 c.NotebookApp.port = 8888 # 自行指定一个端口
-</code></pre>
-<h2 id="添加多种环境">添加多种环境</h2>
-<pre><code class="language-sh"># 进入每个虚拟环境
-conda activate env_name
-conda install ipykernel
-# 退出该虚拟环境
-conda activate base
-# 然后再将这个kernal添加到jupyter里面，NAME为自己取的环境名字
-python -m ipykernel install --user --name NAME --display-name &quot;NAME&quot;
-# 查看已有的kernels
-cd ~/.local/share/jupyter/kernels  
 </code></pre>
 <h2 id="pip">pip</h2>
 <pre><code class="language-sh"># 导入依赖包                                
@@ -702,13 +650,11 @@ pip freeze &gt; requirements.txt
 pip download -d [DIR] -r requirements.txt 
 # 离线安装
 pip install --no-index --find-links=[DIR] -r requirements.txt  
-
 # 更改镜像源
 echo &quot;[global]\nindex-url = http://mirrors.aliyun.com/pypi/simple/\n[install]\ntrusted-host = mirrors.aliyun.com&quot; &gt; ~/.pip/pip.conf 
 </code></pre>
 <h2 id="more">More</h2>
-<p>See detail in these websites.<br>
-
+<p>
 <a href="http://nbviewer.jupyter.org/" target="_blank" rel="noopener">ipynb文件在线查看工具</a></p>
 
     </div>
@@ -839,8 +785,8 @@ echo &quot;[global]\nindex-url = http://mirrors.aliyun.com/pypi/simple/\n[instal
 
       <div class="media-body">
         <h5 class="card-title"><a href="http://lucas-wye.github.io/">ZW YE</a></h5>
-        <h6 class="card-subtitle">B.E.</h6>
-        <p class="card-text">My research interests include machine learning and security.</p>
+        <h6 class="card-subtitle">Graduate Student</h6>
+        <p class="card-text">My research interests include machine learning and computer architecture.</p>
         <ul class="network-icon" aria-hidden="true">
   
     
