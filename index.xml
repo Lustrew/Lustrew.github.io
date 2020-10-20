@@ -406,7 +406,7 @@ sudo apt-get install tmux
 brew install tmux
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;基本操作&#34;&gt;基本操作&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-pYTHON&#34;&gt;# 新建会话                                
+&lt;pre&gt;&lt;code class=&#34;language-Python&#34;&gt;# 新建会话                                
 tmux # 新建一个无名称的会话
 tmux new -s demo # 新建一个名称为demo的会话
 # 进入之前会话
