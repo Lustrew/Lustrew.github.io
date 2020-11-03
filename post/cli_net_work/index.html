@@ -555,7 +555,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    2 min read
+    3 min read
   </span>
   
 
@@ -649,10 +649,10 @@ sudo service ssh start
 ps -e | grep ssh
 
 ## SSH远程登录
-ssh username@192.168.0.1
+ssh username@IP_ADDR
 
 # 将文件/文件夹从远程机下载到本地(scp) 
-scp -r username@192.168.0.1:/home/username/remotefile.txt .
+scp -r username@IP_ADDR:/home/username/remotefile.txt .
 
 # 设置公钥登录
 # (1)复制本地的公钥
@@ -671,6 +671,9 @@ Host {HOSTNAME}
   User {Username}
 
 ssh HOSTNAME
+
+# SSH for data transfer
+ssh -qTfnN -D PORT SERVER 
 </code></pre>
 <h3 id="curl">curl</h3>
 <ul>
@@ -709,6 +712,17 @@ curl -i https://www.example.com
 curl -O https://www.example.com/foo/bar.html
 # 通过添加 `-C` 继续对该文件进行下载，已经下载过的文件不会被重新下载
 curl -C -O http://www.gnu.org/software/gettext/manual/gettext.html
+</code></pre>
+<h3 id="terminal设置代理">terminal设置代理</h3>
+<pre><code class="language-sh"># MacOS &amp; Linux
+export http_proxy=http://127.0.0.1:PORT
+export https_proxy=http://127.0.0.1:PORT
+# Windows
+set https_proxy=&quot;http://127.0.0.1:PORT&quot;
+set http_proxy=&quot;http://127.0.0.1:PORT&quot;
+</code></pre>
+<h3 id="windows-vpn连接">Windows VPN连接</h3>
+<pre><code>rasdial VPN_NAME USERNAME PASSWORD
 </code></pre>
 <h2 id="more">More</h2>
 <p>

@@ -75,10 +75,10 @@ sudo service ssh start
 ps -e | grep ssh
 
 ## SSH远程登录
-ssh username@192.168.0.1
+ssh username@IP_ADDR
 
 # 将文件/文件夹从远程机下载到本地(scp) 
-scp -r username@192.168.0.1:/home/username/remotefile.txt .
+scp -r username@IP_ADDR:/home/username/remotefile.txt .
 
 # 设置公钥登录
 # (1)复制本地的公钥
@@ -97,6 +97,9 @@ Host {HOSTNAME}
   User {Username}
 
 ssh HOSTNAME
+
+# SSH for data transfer
+ssh -qTfnN -D PORT SERVER 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;curl&#34;&gt;curl&lt;/h3&gt;
 &lt;ul&gt;
@@ -135,6 +138,17 @@ curl -i https://www.example.com
 curl -O https://www.example.com/foo/bar.html
 # 通过添加 `-C` 继续对该文件进行下载，已经下载过的文件不会被重新下载
 curl -C -O http://www.gnu.org/software/gettext/manual/gettext.html
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;terminal设置代理&#34;&gt;terminal设置代理&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;# MacOS &amp;amp; Linux
+export http_proxy=http://127.0.0.1:PORT
+export https_proxy=http://127.0.0.1:PORT
+# Windows
+set https_proxy=&amp;quot;http://127.0.0.1:PORT&amp;quot;
+set http_proxy=&amp;quot;http://127.0.0.1:PORT&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;windows-vpn连接&#34;&gt;Windows VPN连接&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;rasdial VPN_NAME USERNAME PASSWORD
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;more&#34;&gt;More&lt;/h2&gt;
 &lt;p&gt;
@@ -281,7 +295,11 @@ sudo fc-cache -f -v
 &lt;p&gt;
 &lt;a href=&#34;http://github.com/Lucas-Wye/Latex_template&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LaTeX模板&lt;/a&gt;&lt;br&gt;
 
-&lt;a href=&#34;http://latexstudio.net/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LaTeX开源小屋&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;http://latexstudio.net/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LaTeX开源小屋&lt;/a&gt;&lt;br&gt;
+
+&lt;a href=&#34;https://liam.page/texlive/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TeX Live下载及安装说明&lt;/a&gt;
+
+&lt;a href=&#34;https://liam.page/2014/09/08/latex-introduction/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;一份其实很短的 LaTeX 入门文档&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -1315,11 +1333,6 @@ tee                    复制stdout
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo systemctl set-default multi.user # 进入命令行
 sudo systemctl set-default graph...   # 进入图形界面
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;terminal设置代理&#34;&gt;terminal设置代理&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;# MacOS: 1087, other: 1080
-export http_proxy=http://127.0.0.1:1087
-export https_proxy=http://127.0.0.1:1087
-&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;ubuntu设置窗口键在左侧&#34;&gt;Ubuntu设置窗口键在左侧&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;gsettings set org.gnome.desktop.wm.preferences button-layout &#39;close,minimize,maximize:&#39;
 &lt;/code&gt;&lt;/pre&gt;
@@ -1332,6 +1345,9 @@ export https_proxy=http://127.0.0.1:1087
 &lt;li&gt;MacOS: &lt;code&gt;pbcopy&lt;/code&gt;, &lt;code&gt;pbpaste&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Linux: &lt;code&gt;xsel&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;more&#34;&gt;More&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://github.com/QSCTech/2020-Autumn-Round-Two/tree/master/problem-set-1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;A good introduction to Linux&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
