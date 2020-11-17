@@ -27,10 +27,10 @@
   
     
   
-  <meta name="description" content="A computer network is a digital telecommunications network which allows nodes to share resources. In computer networks, computing devices exchange data with each other using connections (data links) between nodes.">
+  <meta name="description" content="Github教育优惠申请及VPS使用">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://lucas-wye.github.io/post/cli_net_work/">
+  <link rel="alternate" hreflang="en-us" href="http://lucas-wye.github.io/post/vps/">
 
   
 
@@ -217,7 +217,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://lucas-wye.github.io/post/cli_net_work/">
+  <link rel="canonical" href="http://lucas-wye.github.io/post/vps/">
 
   
   
@@ -233,15 +233,15 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="ZW YE">
-  <meta property="og:url" content="http://lucas-wye.github.io/post/cli_net_work/">
-  <meta property="og:title" content="Network | ZW YE">
-  <meta property="og:description" content="A computer network is a digital telecommunications network which allows nodes to share resources. In computer networks, computing devices exchange data with each other using connections (data links) between nodes."><meta property="og:image" content="http://lucas-wye.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="og:url" content="http://lucas-wye.github.io/post/vps/">
+  <meta property="og:title" content="Github教育优惠使用之VPS | ZW YE">
+  <meta property="og:description" content="Github教育优惠申请及VPS使用"><meta property="og:image" content="http://lucas-wye.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="http://lucas-wye.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-05-30T10:50:03&#43;08:00">
+      <meta property="article:published_time" content="2018-12-27T15:36:39&#43;08:00">
     
-    <meta property="article:modified_time" content="2020-05-30T10:50:03&#43;08:00">
+    <meta property="article:modified_time" content="2019-04-27T15:36:39&#43;08:00">
   
 
   
@@ -265,12 +265,12 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://lucas-wye.github.io/post/cli_net_work/"
+    "@id": "http://lucas-wye.github.io/post/vps/"
   },
-  "headline": "Network",
+  "headline": "Github教育优惠使用之VPS",
   
-  "datePublished": "2020-05-30T10:50:03+08:00",
-  "dateModified": "2020-05-30T10:50:03+08:00",
+  "datePublished": "2018-12-27T15:36:39+08:00",
+  "dateModified": "2019-04-27T15:36:39+08:00",
   
   "author": {
     "@type": "Person",
@@ -285,7 +285,7 @@
       "url": "http://lucas-wye.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "A computer network is a digital telecommunications network which allows nodes to share resources. In computer networks, computing devices exchange data with each other using connections (data links) between nodes."
+  "description": "Github教育优惠申请及VPS使用"
 }
 </script>
 
@@ -303,7 +303,7 @@
 
 
 
-  <title>Network | ZW YE</title>
+  <title>Github教育优惠使用之VPS | ZW YE</title>
 
 </head>
 
@@ -527,7 +527,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>Network</h1>
+  <h1>Github教育优惠使用之VPS</h1>
 
   
 
@@ -545,8 +545,10 @@
     
     
       
+          Last updated on
+      
     
-    May 30, 2020
+    Apr 27, 2019
   </span>
   
 
@@ -555,7 +557,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    3 min read
+    4 min read
   </span>
   
 
@@ -591,144 +593,126 @@
   <div class="article-container">
 
     <div class="article-style">
-      <ul>
-<li>A computer network is a digital telecommunications network which allows nodes to share resources. In computer
-networks, computing devices exchange data with each other using connections (data links) between nodes.</li>
-</ul>
-<h2 id="commands">Commands</h2>
-<pre><code class="language-sh">ping 
-domainname
-hostname
-
-cat /etc/hosts # ip address
-sudo systemctl restart NetworkManager # hosts生效
-
-cat /etc/resolv.conf # dns server
-ip # TCP/IP interface configuration and routing utility
-ifconfig # configure a network interface
-route # show / manipulate the IP routing table
-netstat # show network status (network connections, routing tables, interface statistics, masquerade connections, and multicast memberships)
-
-sudo ping ip地址 -i 0.01 -s 65500 # 每0.01秒给ip地址对应的机器发送65500字节的数据包
-</code></pre>
-<h2 id="useful-remote-connection-utilities">Useful Remote Connection Utilities</h2>
-<p>• <strong>ftp</strong> [options] host, transfer file(s) using file transfer protocol<br>
-• <strong>telnet</strong> [host [port]], communicate with host using telnet protocol<br>
-• <strong>ssh</strong>, remote login or remote execution using secure shell<br>
-• <strong>rcp/scp</strong>, remotely copy files from this machine to another machine<br>
-• <strong>rsync</strong>, smartly copy files over network after checking contents<br>
-• <strong>curl</strong>, transfer a URL via HTTP, FTP, IMAP, etc<br>
-• <strong>wget</strong>, download files over the Internet via HTTP or FTP<br>
-• <strong>lynx/links</strong>, text-mode (mini) web browser</p>
-<h3 id="aria2">aria2</h3>
-<p>(1)Install</p>
-<pre><code class="language-sh"># Ubuntu
-sudo apt-get install aria2
-# CentOS
-yum install aria2
-</code></pre>
-<p>(2)Usage</p>
-<pre><code class="language-sh"># 在命令后附加地址即可
-aria2c &quot;url&quot;
-# 分段下载，利用 aria2 的分段下载功能可以加快文件的下载速度
-# 使用 2 个连接来下载该文件，s的参数值介于 1~5 之间
-aria2c -s 2 &quot;url&quot;  
-
-# 断点续传，在命令中使用 c 选项可以断点续传文件
-aria2c -c &quot;url&quot; 
-</code></pre>
-<h3 id="ssh">ssh</h3>
-<pre><code class="language-sh"># 安装 SSH(Secure Shell) 服务以提供远程管理服务
-sudo apt install openssh-server
-
-# 启动ssh服务
-/etc/init.d/ssh start
-sudo service ssh start
-
-# 检测是否已启动
-ps -e | grep ssh
-
-## SSH远程登录
-ssh username@IP_ADDR
-
-# 将文件/文件夹从远程机下载到本地(scp) 
-scp -r username@IP_ADDR:/home/username/remotefile.txt .
-
-# 设置公钥登录
-# (1)复制本地的公钥
-cat ~/.ssh/id_rsa.pub
-# (2)在远程机器上写入复制的公钥
-vim ~/.ssh/authorized_keys
-chmod 600 ~/.ssh/authorized_keys
-# (3)远程机器授权公钥登录
-sudo echo &quot;PubkeyAuthentication yes&quot; &gt;&gt; /etc/ssh/sshd_config
-# (4)重启ssh服务
-sudo systemctl restart sshd.service
-# Or
-ssh-copy-id -i Public_Key_File Remote_Server
-
-# .ssh/config example
-Host {HOSTNAME}
-  HostName {IP}
-  User {Username}
-
-ssh HOSTNAME
-
-# SSH for data transfer
-ssh -qTfnN -D PORT SERVER 
-</code></pre>
-<h3 id="curl">curl</h3>
+      <h2 id="github教育优惠申请">Github教育优惠申请</h2>
+<p>首先，注册一个
+<a href="github.com">github账号</a></p>
+<p>然后在
+<a href="https://education.github.com/students" target="_blank" rel="noopener">github education</a>上进行学生认证，认证后点击Get your Pack即可
+<img src="/img/vps/1.png" alt=""></p>
+<p>申请成功后，可以看到一堆的优惠包
+<img src="/img/vps/2.png" alt=""></p>
+<h2 id="vps">VPS</h2>
+<p>​        虚拟专用服务器（Virtual Private Server），是将一台服务器分区成多个虚拟专享服务器的服务。实现VPS的技术分为容器技术和虚拟化技术 。在容器或虚拟机中，每个VPS都可分配独立公网IP地址、独立操作系统、实现不同VPS间磁盘空间、内存、CPU资源、进程和系统配置的隔离，为用户和应用程序模拟出“独占”使用计算资源的体验。VPS可以像独立服务器一样，重装操作系统，安装程序，单独重启服务器。VPS为用户提供了管理配置的自由，可用于企业虚拟化，也可以用于IDC资源租用。 IDC资源租用，由VPS提供商提供。不同VPS提供商所使用的硬件VPS软件的差异，及销售策略的不同，VPS的使用体验也有较大差异。尤其是VPS提供商超卖，导致实体服务器超负荷时，VPS性能将受到极大影响。相对来说，容器技术比虚拟机技术硬件使用效率更高，更易于超卖，所以一般来说容器VPS的价格都高于虚拟机VPS的价格。 这些VPS主机以最大化的效率共享硬件、软件许可证以及管理资源。每个VPS主机都可分配独立公网IP地址、独立操作系统、独立超大空间、独立内存、独立CPU资源、独立执行程序和独立系统配置等. VPS主机用户除了可以分配多个虚拟主机及无限企业邮箱外，更具有独立主机功能, 可自行安装程序，单独重启主机。<br>
+​        VPS本质上是一个服务器，可通过在上面搭载科学上网的代理软件(shadowsocks等)来实现科学上网。VPS首先必须要能够连接互联网，国外的服务器是可以直接上外网的。</p>
+<h2 id="digitalocean">DigitalOcean</h2>
+<p>​      在github学生优惠里，可以看到一个DigitalOcean的$50代金券，足够免费使用DO的服务器10个月的时间。
+DigitalOcean的使用方法如下：</p>
+<h3 id="1注册digitalocean帐号">(1)注册DigitalOcean帐号</h3>
+<p>访问
+<a href="https://m.do.co/c/f102147ffdd1" target="_blank" rel="noopener">DigitalOcean</a>注册账号(使用此链接注册能得到$10的代金券)</p>
+<h3 id="2激活">(2)激活</h3>
+<p>注册后，需要进行激活。激活有两种方式，一种是绑定信用卡，另一种是用paypal，都要交$5才能激活。推荐使用paypal，可以先注册一个
+<a href="http://paypal.com" target="_blank" rel="noopener">paypal</a>账号，绑定银行卡，充值​$5后再解绑。</p>
+<h3 id="3兑换优惠码">(3)兑换优惠码</h3>
+<p>在 Settings 里面的 Billing 会有一个兑换优惠码的地方。输入github教育优惠页面的DigitalOcean那里的优惠码即可。
+若是没有找到兑换优惠码的地方，先联系
+<a href="https://do-support.force.com/s/createticket" target="_blank" rel="noopener">客服</a>
+如图:<br>
+<img src="/img/vps/3.png" alt=""></p>
+<h3 id="4购买服务器">(4)购买服务器</h3>
+<p>在DigitalOcean中服务器被称为Droplets，首先选择Create Droplets, 按如下配置即可
+<img src="/img/vps/4.png" alt=""><br>
+<img src="/img/vps/5.png" alt=""><br>
+操作系统建议选Centos，版本就选择最新的就可以了，Centos是服务器系统的首选了，Ubuntu比较适合个人使用，在稳定性上Ubuntu不如Centos。关于节点的选择，San Francisco到大陆的网速很快，选择该节点最优。<br>
+SSHKey不是强制的，推荐配置一下，不然每次远程登录时都需要输入密码（这个密码会在服务器搭建完成后收到的邮件中，如果配置的SSH key就不会收到密码），点击New SSH key，得到如下：<br>
+<img src="/img/vps/6.png" alt="">将自己电脑上的ssh公钥复制到上面输入框中，在下面的输入框中为其起一个名字即可。</p>
 <ul>
-<li>client URL tool</li>
+<li>获取电脑ssh公钥的方法</li>
 </ul>
-<p>(1)不带有任何参数时，发出 GET 请求</p>
-<pre><code class="language-sh">curl https://www.example.com
+<pre><code class="language-shell">ssh-keygen # 然后按三次Enter
+cat ～/.ssh/id_rsa.pub
 </code></pre>
-<p>(2)<code>-A</code>指定User-Agent，默认用户代理字符串是curl/[version]</p>
-<pre><code class="language-sh">curl -A 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36' https://google.com
+<p>复制文件id_rsa.pub的全部内容即可。</p>
+<h3 id="5配置服务器">(5)配置服务器</h3>
+<h4 id="连接">连接</h4>
+<p>在自己电脑上进行配置，首先，打开系统的终端或者cmd，使用ssh远程连接服务器。</p>
+<pre><code class="language-shell">ssh root@ip
 </code></pre>
-<p>(3)<code>-b</code> 参数用来向服务器发送 Cookie</p>
-<pre><code class="language-sh"># 生成一个标头Cookie: foo=bar，向服务器发送一个名为foo、值为bar的 Cookie
-curl -b 'foo=bar' https://google.com
+<h4 id="配置防火墙">配置防火墙</h4>
+<pre><code class="language-shell"># 安装firewalld
+yum install firewalld firewall-config
+# 启动firewalld
+systemctl start firewalld
+# 修改SSH端口
+vi /usr/lib/firewalld/services/ssh.xml
 </code></pre>
-<p>(4)<code>-d</code> 参数用于发送 POST 请求的数据体</p>
-<pre><code class="language-sh">curl -d'login=emma＆password=123'-X POST https://google.com/login
-# `--data-urlencode` 等同于 `-d` 
-# 发送 POST 请求的数据体，区别在于会自动将发送的数据进行 URL 编码
+<p>此时出现</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+　　&lt;service&gt;
+　　　　&lt;short&gt;SSH&lt;/short&gt;
+   　　&lt;description&gt;Secure Shell (SSH) is a protocol for logging into and executing commands on remote machines. It provides secure encrypted communications. If you plan on accessing your machine remotely via SSH over a firewalled interface， enable this option. You need the openssh-server package installed for this option to be useful.&lt;/description&gt;
+   　　&lt;port protocol=&quot;tcp&quot; port=&quot;22&quot;/&gt;
+　　&lt;/service&gt;
 </code></pre>
-<p>(5)<code>-G</code> 参数用来构造 URL 的查询字符串</p>
-<pre><code class="language-sh"># 实际请求的 URL 为https://google.com/search?q=kitties&amp;count=20
-curl -G -d 'q=kitties' -d 'count=20' https://google.com/search
+<p>修改port=&quot;22&quot;改为 port=&quot;xxx&quot;即可。</p>
+<p>修改后重载firewalld</p>
+<pre><code class="language-shell">firewall-cmd --permanent --add-service=ssh
+firewall-cmd --reload
 </code></pre>
-<p>(6)<code>-H</code> 参数添加 HTTP 请求的标头</p>
-<pre><code class="language-sh">curl -H 'Accept-Language: en-US' https://google.com
-curl -d '{&quot;login&quot;: &quot;emma&quot;, &quot;pass&quot;: &quot;123&quot;}' -H 'Content-Type: application/json' https://google.com/login
+<h4 id="使用v2rayhttpswwwv2raycom安装">使用
+<a href="https://www.v2ray.com/" target="_blank" rel="noopener">v2ray</a>安装</h4>
+<h5 id="安装">安装</h5>
+<pre><code class="language-shell">bash v2ray.sh
+sudo vi /etc/v2ray/config.json
 </code></pre>
-<p>(7) <code>-i</code> 参数打印出服务器回应的 HTTP 标头</p>
-<pre><code class="language-sh"># 先输出服务器回应的标头，然后空一行，再输出网页的源码
-curl -i https://www.example.com
+<h5 id="修改配置文件">修改配置文件</h5>
+<pre><code class="language-json">{
+  &quot;inbounds&quot;: [
+    {
+      // 端口
+      &quot;port&quot;: 2048,   
+      &quot;protocol&quot;: &quot;shadowsocks&quot;,
+      &quot;settings&quot;: {
+        // 加密方式
+        &quot;method&quot;: &quot;aes-256-gcm&quot;,
+        &quot;ota&quot;: false,
+        // 密码
+        &quot;password&quot;: &quot;v2ray&quot;
+      }
+    }
+  ],
+  &quot;outbounds&quot;: [
+    {
+      &quot;protocol&quot;: &quot;freedom&quot;,  
+      &quot;settings&quot;: {}
+    }
+  ]
+}
 </code></pre>
-<p>(8)<code>-o</code> 参数将服务器的回应保存成文件，等同于wget命令</p>
-<pre><code class="language-sh">curl -o example.html https://www.example.com
-# `-O` 参数将服务器回应保存成文件，并将 URL 的最后部分当作文件名。
-curl -O https://www.example.com/foo/bar.html
-# 通过添加 `-C` 继续对该文件进行下载，已经下载过的文件不会被重新下载
-curl -C -O http://www.gnu.org/software/gettext/manual/gettext.html
+<h5 id="启动v2ray">启动v2ray</h5>
+<pre><code>sudo systemctl start v2ray
 </code></pre>
-<h3 id="terminal设置代理">terminal设置代理</h3>
-<pre><code class="language-sh"># MacOS &amp; Linux
-export http_proxy=http://127.0.0.1:PORT
-export https_proxy=http://127.0.0.1:PORT
-# Windows
-set https_proxy=&quot;http://127.0.0.1:PORT&quot;
-set http_proxy=&quot;http://127.0.0.1:PORT&quot;
+<h5 id="查看v2ray工作状态">查看v2ray工作状态</h5>
+<pre><code>sudo systemctl status v2ray
 </code></pre>
-<h3 id="windows-vpn连接">Windows VPN连接</h3>
-<pre><code>rasdial VPN_NAME USERNAME PASSWORD
+<p>如果显示如下所示说明v2ray已经成功启动：</p>
+<pre><code class="language-shell">● v2ray.service - V2Ray Service
+   Loaded: loaded (/etc/systemd/system/v2ray.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2018-12-18 11:15:33 EST; 1 day 19h ago
+ Main PID: 2986 (v2ray)
+   CGroup: /system.slice/v2ray.service
+           └─2986 /usr/bin/v2ray/v2ray -config /etc/v2ray/config.json
+
+Dec 18 11:15:33 xxxx systemd[1]: Started V2Ray Service.
+Dec 18 11:15:34 xxxx v2ray[2986]: V2Ray 4.8.0 (Po) 20181206
+Dec 18 11:15:34 xxxx v2ray[2986]: A unified platform for anti-censorship.
+Dec 18 11:15:34 xxxx v2ray[2986]: 2018/12/18 11:15:34 [Warning] v2ray.com/core: V2Ray 4.8.0 started
 </code></pre>
-<h2 id="more">More</h2>
-<p>
-<a href="https://www.qingtingip.com/h_189554.html" target="_blank" rel="noopener">nmcli用法</a></p>
+<p>然后就可以在自己的客户端上输入对应的参数开始</p>
+<h4 id="防火墙添加shadowsocks端口">防火墙添加shadowsocks端口</h4>
+<pre><code class="language-shell">firewall-cmd --add-port=5901/tcp --permanent
+</code></pre>
+<p>这里要注意的是端口号9999要修改成上面配置文件中的端口号</p>
 
     </div>
 
@@ -751,7 +735,7 @@ set http_proxy=&quot;http://127.0.0.1:PORT&quot;
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=http://lucas-wye.github.io/post/cli_net_work/&amp;text=Network" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=http://lucas-wye.github.io/post/vps/&amp;text=Github%e6%95%99%e8%82%b2%e4%bc%98%e6%83%a0%e4%bd%bf%e7%94%a8%e4%b9%8bVPS" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -764,7 +748,7 @@ set http_proxy=&quot;http://127.0.0.1:PORT&quot;
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=http://lucas-wye.github.io/post/cli_net_work/&amp;t=Network" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=http://lucas-wye.github.io/post/vps/&amp;t=Github%e6%95%99%e8%82%b2%e4%bc%98%e6%83%a0%e4%bd%bf%e7%94%a8%e4%b9%8bVPS" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -777,7 +761,7 @@ set http_proxy=&quot;http://127.0.0.1:PORT&quot;
       
       
       <li>
-        <a href="mailto:?subject=Network&amp;body=http://lucas-wye.github.io/post/cli_net_work/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Github%e6%95%99%e8%82%b2%e4%bc%98%e6%83%a0%e4%bd%bf%e7%94%a8%e4%b9%8bVPS&amp;body=http://lucas-wye.github.io/post/vps/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -790,7 +774,7 @@ set http_proxy=&quot;http://127.0.0.1:PORT&quot;
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=http://lucas-wye.github.io/post/cli_net_work/&amp;title=Network" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=http://lucas-wye.github.io/post/vps/&amp;title=Github%e6%95%99%e8%82%b2%e4%bc%98%e6%83%a0%e4%bd%bf%e7%94%a8%e4%b9%8bVPS" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -803,7 +787,7 @@ set http_proxy=&quot;http://127.0.0.1:PORT&quot;
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Network%20http://lucas-wye.github.io/post/cli_net_work/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Github%e6%95%99%e8%82%b2%e4%bc%98%e6%83%a0%e4%bd%bf%e7%94%a8%e4%b9%8bVPS%20http://lucas-wye.github.io/post/vps/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -816,7 +800,7 @@ set http_proxy=&quot;http://127.0.0.1:PORT&quot;
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=http://lucas-wye.github.io/post/cli_net_work/&amp;title=Network" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=http://lucas-wye.github.io/post/vps/&amp;title=Github%e6%95%99%e8%82%b2%e4%bc%98%e6%83%a0%e4%bd%bf%e7%94%a8%e4%b9%8bVPS" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
